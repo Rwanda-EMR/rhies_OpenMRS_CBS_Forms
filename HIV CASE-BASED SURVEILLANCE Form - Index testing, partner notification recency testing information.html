@@ -1,0 +1,1814 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        @ENROLLMENT_DATE@ = badacf97-0970-4dde-aee4-5e1c2bb125f7
+        @DATE_ANTI_RETROVIRALS_STARTED@ = 3ce498dc-26fe-102b-80cb-0017a47871b2
+        @DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@=105707
+
+        @RECENCY_ASSAY_TEST@=105617
+        @RECENCY_TEST_NAME@=105643
+        @RECENCY_ASSAY_RESULTS@=105621
+        @RECENCY_TEST_DATE@=105644
+        @LONG_TERM@=105619
+        @INVALID@=105618
+        @RECENCY_SAMPLE_COLLECTION_DATE@=105671
+
+        @NUMBER_OF_FAMILY_MEMBERS@ = fe5fdddf-96ee-42af-9b36-0ab8c3ddd05d
+        @NUMBER_OF_SEXUAL_PARTNERS@ = 3cee2924-26fe-102b-80cb-0017a47871b2 
+        <!-- @CBS_CONTACT_SEXUAL_PARTNERS_IN_LAST_12_MONTHS@=2080ba64-f5da-42ec-b80c-72bd00e3371d -->
+        @SEXUAL_PARTNERS_IN_LAST_12 MONTHS@=06de84ee-6deb-4d33-b2b6-bc680a73939c
+        @SOCIAL_NETWORK_MEMBERS@ = 504e851d-8a95-4f0f-bcad-ca081a975abf  
+        @CBS_CONTACT_AGE@=2ecf52c4-f732-46a8-9f10-45a04ca70f49   
+        @CBS_CONTACT_GENDER@=d1ecd154-13b1-433a-8480-3213e178aff7
+        @RELATION_OF_THE_CONTACT_AND_INDEX_CASE@=d4a45c62-5d82-43a2-856d-6c75db9fe842
+        @Spouse_Husband_Fiancé@=78240034-73f3-46d8-b688-81fb99f27056
+        @Girlfiend_Boyfriend@=a71fff61-4db8-43ce-98f8-5de7f689f560
+        @Couple_cohabiting_partner@=8d234f0f-c299-42e5-8edf-f2460e64704e
+        @Casual_partner@=ca27eadb-c14d-414e-8db9-694b3831e719
+        @Somon_who_pay_me_to_have_sex@=a8415b6a-065d-4cd6-9c70-4cdcec7bf8ef
+        @Somone_I_pay_to_have_sexual_relation@=f95bdebd-c174-4eaa-86cf-067f78db5364
+        @Victim_of_violence@=825ee96c-5277-4b29-bece-7d94e654da34
+        @Partner_is_unknown@=7f0dd8e6-f0c3-4cb1-a81e-24391fc7200b
+        @His_her_child@=98463468-4bc0-4df0-8b78-ad5e208c5d2a
+        @Member_of_his_social_network@=1394d37f-38ca-4f8a-a486-ac46e0ed7523
+        @Other_PWID_TG_etc@=d0385b0e-c9ac-4f63-ab8d-b6273c029f9d
+        @CBS_CONTACT_HIV_STATUS@=438e1ee2-5642-4868-867d-960eca6e6451
+        @POSITIVE@=3cd3a7a2-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@=3cd28732-26fe-102b-80cb-0017a47871b2
+        @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @CBS_RISK_OF_VIOLENCE@= 5d90078d-43d5-4ea1-9bf6-cda5398d1d67
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @CBS_PLANNED_REFERENCE_TYPE@=d300cfbb-c771-44db-8272-7065efc88242
+        @CBS_REFERENCE_BY_CLIENT@=c1ef1230-a9f7-4593-bdc8-1e9a08d45968
+        @CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@=5e053da8-f8ac-4f4d-902f-dba756a312a5
+        @CBS_DOUBLE_REFERENCE@=e7fbe2c7-b9c4-4caa-83f3-3fc327a225c4
+        @CBS_REFERENCE_FAMILY_TESTING@=35de662a-63de-4dbc-92c4-2b08165406ab
+        @CBS_REFERENCE_SOCIAL_NETWORK_TESTING@=d195e749-fa4a-43e3-8ceb-a72f25fb2be4
+        @CBS_HIV_STATUS_KNOWN@=6c93ead4-d189-4476-a81d-1bef16bda6a4
+        @CBS_REFERENCE_NOT_PLANNED@=8919a43c-fdee-4861-9fd8-ff068d4d740c
+        @CBS_CONTACT_SUCCESSFULLY_INVITED@=105672
+        @CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@=105673
+        @CBC_UNSUCCESSFUL_CLIENT_REFERRAL@=105674
+        @CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@=105675
+        @CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@=105676
+        @CONTACT_REFUSED_NOTIFICATION@=105677
+        @CBS_CONTACT_MOVED_OUT_OF_AREA@=105678
+        @CBS_CONTACT_NOT_REACHABLE_ON_PHONE@=105679S
+        @CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@=105680
+        @CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@=105681
+        @CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@=105714
+        @CBS_REFERENCE_BY_CLIENT@=105664
+        @CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@=105665
+        @CBS_DOUBLE_REFERENCE@=105666
+        @CBS_REFERENCE_FAMILY_TESTING@=105667
+        @CBS_REFERENCE_SOCIAL_NETWORK_TESTING@=105668
+        @CBS_HIV_STATUS_KNOWN@=105669
+        @CBS_REFERENCE_NOT_PLANNED@=105670
+        @CBS_CONTACT_TESTED_FOR_HIV@=105683
+        @CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@=105684
+        @CBS_CONTACT_HIV_RESULT@=105685
+        @CBS_CONTACT_TRACNET_NUMBER@=105715
+        @CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@=105686
+        @CBC_COMMENT@=105687
+
+        @CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=105688
+        @CBS_INDEX_NOTIFIED_CONTACT@=105689
+        @CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=105690
+        @CBS_CONTACT_NOTIFIER@=105691
+        @CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=105688
+        @CBS_INDEX_NOTIFIED_CONTACT@=105689
+        @CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=105690
+        @CBS_CONTACT_INITIATED_ON_ART@=105698
+        @CBS_NOTIFICATION_APPROACH@=105699
+        @CBS_CONTACT_CODE@=105700
+        @ELECTRONIC_RECORD_MATCHES_PAPER_FORM@=RWANDA:Electronic record matches paper form
+
+    </macros>
+
+
+    <style>
+        .header {
+            text-align: center;
+            color: $fontOnHeaderColor;
+        }
+
+        th.tableHeader {
+            background-color: #009d8e;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-align: left;
+        }
+        .section {
+            border: 1px solid $headerColor;
+            padding: 2px;
+            text-align: left;
+            margin-bottom: 1em;
+        }
+        .sectionHeader {
+            background-color: $headerColor;
+            color: $fontOnHeaderColor;
+            display: block;
+            padding: 2px;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr.spaceUnder>td {
+            padding-bottom: 1em;
+        }
+
+        td {
+            font-size: 15px;
+        }
+        table.baseline-aligned td {
+            vertical-align: baseline;
+        }
+        table,td,th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            background-color: #D9D9D9;
+            font-size: 16px;
+        }
+
+        .error {
+            display: none;
+        }
+
+        .lables {
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .selectedCancerStagingKeys {
+            page-break-before: always;
+            border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+            border: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+
+
+
+        if (jQuery) {
+
+
+
+            $j(document).ready(function () {
+                //Hide these fields by default
+                //$j(".tested,.notTested,.noLinkToTreatment,.linkToTreatment ,.noLinkotherOption,.artInitiation,.linkToTreatmentApproach").hide();
+                //If Contact tested for HIV field for result
+
+                //Count of number of contacts of an index case              
+                var totalContacts = 0;
+                //Number of contacts who are family members
+                $j("#numFamily").change(function () {
+                    var numFamContact = 0;
+                    if (getValue("numFamily.value") !== null) {
+                        numFamContact = parseInt(getValue("numFamily.value"));
+                    }
+                    totalContacts += numFamContact;
+                    // alert(totalContacts);
+                });
+
+                //Number of contacts who are sexual partners in the last 12 months
+                $j("#numSexPartners").change(function () {
+                    var numPartnerContact = 0;
+                    if (getValue("numSexPartners.value") !== null) {
+                        numPartnerContact = parseInt(getValue("numSexPartners.value"));
+                    }
+                    totalContacts += numPartnerContact;
+                    // alert(totalContacts);
+
+                });
+
+                //Number of contacts who are social network members
+                $j("#numSocialNetMembers").change(function () {
+                    var numSocialNet = 0;
+                    if (getValue("numSocialNetMembers.value") !== null) {
+                        numSocialNet = parseInt(getValue("numSocialNetMembers.value"));
+                    }
+                    totalContacts += numSocialNet;
+                    // alert(totalContacts);
+
+                });
+
+                //Show options for if contact tested for HIV? 
+//                $j(document).on('click', '.testedForHIV', function () {
+//                    if ($j(this).find(':checked').val() == "1066") {
+//                        $j(this).closest('tr').nextAll('tr.notTested').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.tested').eq(0).show();
+//                        $j(this).closest('tr').nextAll('tr.artInitiation').eq(0).show();
+//                    } else if ($j(this).find(':checked').val() == "1065") {
+//                        $j(this).closest('tr').nextAll('tr.tested').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.artInitiation').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.notTested').eq(0).show();
+//                    } else if ($j(this).find(':checked').val() == null) {
+//                        $j(this).closest('tr').nextAll('tr.tested').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.artInitiation').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.notTested').eq(0).hide();
+//                    }
+//                });
+                //Show options for contact recieved at the facility
+//                $j(document).on('click', '.recievedAtFacility', function () {
+//                    if ($j(this).find(':checked').val() == "1066") {
+//                        $j(this).closest('tr').nextAll("tr.noLinkToTreatment").hide();
+//                        $j(this).closest('tr').nextAll("tr.linkToTreatment").eq(0).show();
+//                        $j(this).closest('tr').nextAll("tr.linkToTreatmentApproach").show();
+//                    } else if ($j(this).find(':checked').val() == "1065") {
+//                        $j(this).closest('tr').nextAll("tr.linkToTreatment").eq(0).hide();
+//                        $j(this).closest('tr').nextAll("tr.linkToTreatmentApproach").hide();
+//                        $j(this).closest('tr').nextAll("tr.noLinkToTreatment").eq(0).show();
+//                    } else if ($j(this).find(':checked').val() == null) {
+//                        $j(this).closest('tr').nextAll('tr.linkToTreatment').eq(0).hide();
+//                        $j(this).closest('tr').nextAll('tr.noLinkToTreatment').eq(0).hide();
+//                        $j(this).closest('tr').nextAll("tr.linkToTreatmentApproach").hide();
+//                    }
+//
+//                });
+                //Display other reason index not linked to treatment at facility
+//                $j(document).on('change', '.noLinkOptions', function () {
+//                    if ($j(this).find('option:selected').text() == "7. Autres (Others)") {
+//                        $j(this).closest('.noLinkToTreatment').find('.noLinkotherOption').show();
+//                    } else if ($j(this).find('option:selected').text() != "7. Autres (Others)") {
+//                        $j(this).closest('.noLinkToTreatment').find('.noLinkotherOption').hide();
+//
+//                    }
+//
+//                });
+
+                //Display tracnet no field if patient was initiated on ART
+//                $j(document).on('click', '.artStartOpts', function () {
+//                    if ($j(this).find(':checked').val() == "1066") {
+//                        $j(this).closest('.artInitiation').find('.tracnet').show();
+//                    } else if ($j(this).find(':checked').val() == "1065") {
+//                        $j(this).closest('.artInitiation').find('.tracnet').hide();
+//
+//                    } else if ($j(this).find(':checked').val() == null) {
+//                        $j(this).closest('.artInitiation').find('.tracnet').hide();
+//
+//                    }
+//
+//                });
+
+
+
+                var num = 1;
+                var nbContact = 1; // declare this once as counter for both add and remove functions
+
+                function LoopC(c) {
+                    console.log("Loop " + c)
+                    if (c) {
+                        if ( c != 11){//11 is the number os contact list
+                            
+                        
+                        var isEmpty = true;
+                        var nb = $j('#contact' + c).find(':input').filter(function () {
+                            return $j.trim($j(this).val()).length == 0
+                        }).length ;
+                        
+                        var nbem = $j('#contact' + c).find(':input:empty').length;
+                        console.log("nb ", nb);
+                        console.log("nbem", nbem);
+                        if (nb != 12) {//Empty
+                            $j('#contact' + c).delay(2000).fadeIn(500);
+                            LoopC(c + 1);
+                        } else {//Not empty
+                            num = c - 1;
+                        }
+                        }else{
+                            num = c - 1;
+                        }
+                    } else {
+                        num = c - 1;
+                    }
+                }
+
+                var params = new window.URLSearchParams(window.location.search);
+
+                if (params.get('MODE') == "EDIT") {//Edit
+                    console.log("Mode Edit");
+                    LoopC(2);
+                } else if (params.get('formId')) {//Creation
+                    console.log("Mode formId");
+                } else {//View the form
+                    console.log("Mode view");
+                    LoopC(2);
+                }
+
+                $j('#btnAdd').click(function () {
+                    num++;
+                    console.log('#contact' + num);
+                    $j('#contact' + num).show();
+
+                    $j('#btnDel').removeAttr('disabled');
+                    if (num == 20)
+                        $j('#btnAdd').attr('disabled', true);
+                });
+
+                $j('#btnDel').click(function () {
+                    $j('.contactInfo:last').remove();
+                    $j('#btnAdd').removeAttr('disabled');    // enable the "add" button
+                    num--;
+                    // if only one element remains, disable the "remove" button
+                    if (num == 1)
+                        $j('#btnDel').attr('disabled', 'disabled');
+                });
+                //@param input type, int return name of input + integer
+                function attrIncrement(string, num) {
+                    return string.slice(0, (name.length - 1)) + num;
+                }
+
+
+                $j('#btnDel').attr('disabled', 'disabled');
+                function attrIncrement(string, num) {
+                    return string.slice(0, (name.length - 1)) + num;
+                }
+                //Remove cloned div
+                $j("#rmv_btn").click(function () {
+                    $j(".contactInfo:last").remove();
+                });
+
+                
+                //If  submission does not work redirect with an error message
+                beforeSubmit.push(function() {
+
+                    var date= getValue('encounterDate.value');
+                    var provider = getValue('encounterProvider.value');
+                    var location = getValue('encounterLocation.value');
+
+                    if(!date || !provider || !location){
+                        $j("<div>Please select an Encounter Date, a Provider and a Location</div>").dialog();
+                        return false;
+                    }else{
+                        return true;
+                    }
+                    
+                });
+
+            });
+        }
+
+    </script>
+    <section headerLabel="1. Encounter Details">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>Date:</td>
+                <td><encounterDate default="today" id="encounterDate"/></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td><encounterLocation default="1" id="encounterLocation"/></td>
+            </tr>
+            <tr>
+                <td>Provider:</td>
+                <td><encounterProvider required="false" id="encounterProvider"/></td>
+            </tr>
+            <tr>
+                <td>Date d'enrôlement dans le CBS (enrollment date in CBS):</td>
+                <td><obs conceptId="$@ENROLLMENT_DATE@" allowFutureDates="true"/> </td>
+            </tr>
+            <tr>
+                <td>№ d'Identifiant Unique  (UPID): </td>
+                <td><lookup class="value" complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end "/></td>
+            </tr>
+            <tr>
+                <td>Date de début  des  ARVs (Date of ART initiation):</td>
+                <td><obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED@" allowFutureDates="true"/> </td>
+            </tr>
+        </table>
+    </section><br></br>
+
+    <section headerLabel="Information sur le Test de 'Recency Testing' (Recency Testing Information)">
+        <table>
+            <tr>
+                <td>
+                    Date de collecte  de l'échantillon (Date of sample collection): <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" allowFutureDates="true"/> 
+            </td>
+
+            <td>
+                Le site où l'échantillon a été référé  (Site where sample was referred): <encounterLocation /> 
+            </td>
+            <td>
+            </td>
+            </tr>
+
+            <tr>
+                <td>Date de réception du Résultat dans le service  ARV (Date of result reception at ARV Service):
+            <obs conceptId="$@DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@"/></td> <!-- Create new concept for this -->
+            <td>
+                Résultat (R/LT)  (Result R/LT): <obs conceptId="$@RECENCY_ASSAY_RESULTS@" conceptAnswerIds="$@RECENT@, $@LONG_TERM@" answerLabels="R, LT" style="radio"/>
+            </td>           
+            <td>
+                Date d'annonce du résultat au Cas Index (Date result was disclosed to Index Case): <obs conceptId="$@ENROLLMENT_DATE@" allowFutureDates="true"/>
+            </td>
+            </tr>
+        </table>
+        <br></br>
+    </section>
+    <section headerLabel="Nombre de Contacts (Number of Contacts)">
+        <table>
+            <tr style="border: 1px solid black;">
+                <td>Membres de la famille (Family member)
+            <obs conceptId="$@NUMBER_OF_FAMILY_MEMBERS@" id="numFamily"/>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    Partenaires sexuels reçus  durant les 12 derniers mois (Sexual Partners in the last 12 months)
+            <obs conceptId="$@NUMBER_OF_SEXUAL_PARTNERS@" id="numSexPartners"/> 
+            </td>
+            </tr>  
+            <tr>                 
+                <td>
+                    Personnes de réseau social (Social Network members)<obs conceptId="$@SOCIAL_NETWORK_MEMBERS@" id ="numSocialNetMembers"/> 
+            </td>
+            </tr>
+        </table><br></br>
+    </section>
+    <div id="contactsList">
+        <div class="contactInfo">
+            <div>
+                <header><h2> Contact 1</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact recieved at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact2" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 2</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact3" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 3</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact4" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 4</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact5" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 5</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact6" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 6</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact7" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 7</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact8" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 8</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact9" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 9</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+        <div id="contact10" class="contactInfo hidden">
+            <div>
+                <header><h2> Contact 10</h2></header>
+                <section headerLabel="Information sur les contacts (Information on Contacts)" id="secHeader"> 
+                    <table>
+                        <tr>
+                            <th>Nombre de Contacts (Number of Contacts) (information bellow are reported for each sexual partner) 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Code du Contact (Code of the Contact) &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@" class="input"/><br/><br/>
+                        </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>AGE
+                        <obs conceptId="$@CBS_CONTACT_AGE@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.age"/>;</td> -->
+                        </tr>
+
+                        <tr>
+                            <td>Sex
+                        <obs conceptId="$@CBS_CONTACT_GENDER@" class="input"/>
+                        </td>
+                        <!-- <td><lookup expression="patient.gender"/></td> -->
+                        </tr>  
+
+                        <tr>
+                            <td>
+                                Relation du Contact avec le Cas Index (1,2,3,4,5,6,7,8,9,10,11) (Relation of the Contact and Index case)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@" conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@" answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "/>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                        <obs conceptId="$@CBS_CONTACT_HIV_STATUS@" conceptAnswerIds="$@POSITIVE@, $@NEGATIVE@, $@UNKNOWN@" answerLabels="P, N,  Inconnu" style="radio" id="hivStatus" name="radioHs"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                        <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="0, N" style="radio" id="riskViolence" name="radioRv"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client    (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"/>
+                        </td>
+                        </tr>
+
+                    </table><br/>
+                </section>
+                <section headerLabel="Resultats de la notification de Contacts (Outcome of Contact notification process):Duplicate according to number of contact" id="secHeader">
+
+                    <table>
+                        <tr>
+                            <th colspan="2"> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Contact invite a la FOSA (Contact successfully invited ):</td>
+                            <td><obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contact recu a la formation sanitaire? (Contact received at health facility?) </td>
+                            <td> <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="recievedAtFacility"/></td>
+                        </tr>
+                        <tr class="noLinkToTreatment">
+                            <td></td>
+                            <td>(Si "N", raison (1,2,3,4,5,6,7)) (If "N", reason)
+                                &#160;&#160;&#160;
+                        <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@" conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@" 
+                             answerLabels="1.Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)" class="noLinkOptions"/><br/><br/>
+                        <div class="noLinkotherOption hidden" style="display:none"><obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@" labelText="Specifier (Specify)" answerLabel="" /> </div>
+                        <br/><br/>
+                        </td>
+                        </tr>
+
+                        <tr class="linkToTreatment">
+                            <td>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index case)</td>
+                            <td>
+                        <obs conceptId="$@CBS_CONTACT_NOTIFIER@" conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                             answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)   "/>
+                        </td>              
+                        </tr>  
+
+                        <tr class="linkToTreatmentApproach">
+                            <td>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y", notification approach)</td>
+                            <td><obs conceptId="$@CBS_NOTIFICATION_APPROACH@" conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@" answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"/></td>       
+                        </tr>
+
+                        <tr>
+                            <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                            <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr class="notTested"><td></td>
+                            <td> Si "N", Raison(A,B,C) (If "N", reason)<obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@" conceptLabel='Si "N", Raison(A,B,C) (If "N", reason)'/></td>
+                        </tr>
+                        <tr class="tested">
+                            <td></td>
+                            <td>Si O, Résultat  N/P (If Y, result)<obs conceptId="$@CBS_CONTACT_HIV_RESULT@" conceptLabel='Si O, Résultat  N/P (If Y, result)' style="radio"/></td>
+                        </tr>
+
+                        <tr class="artInitiation">
+                            <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                            <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                        <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                        </div>
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
+                            <td>
+                        <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Observation (Comments)</td>
+                            <td><obs conceptId="$@CBC_COMMENT@" conceptLabel=""/></td>
+                        <!--  <td><obs conceptId="$@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@" style="radio"/></td> -->
+                        </tr>
+                    </table>   
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div> 
+        <button type="button" id="btnAdd">Click to Add information on more contacts</button>
+        <button type="button" id="btnDel">Delete information on contact</button>
+    </div>
+    <br/>
+    <submit/>
+
+    <div class="hiddenDiv hidden">
+
+    </div>  
+
+</htmlform>
