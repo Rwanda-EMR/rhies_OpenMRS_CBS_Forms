@@ -349,7 +349,10 @@
                     var location = getValue('encounterLocation.value');
 
                     if(!date || !provider || !location){
-                        $j("<div>Please select an Encounter Date, a Provider and a Location</div>").dialog();
+                        getField('encounterDate.error').html('This field is required').show();
+                        getField('encounterProvider.error').html('This field is required').show();
+                        getField('encounterLocation.error').html('This field is required').show();
+                        //$j("<div>Please select an Encounter Date, a Provider and a Location</div>").dialog();
                         return false;
                     }else{
                         return true;
