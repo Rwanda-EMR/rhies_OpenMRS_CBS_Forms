@@ -87,20 +87,6 @@
         @ART_INITIATED_AT_FACILITY@=e4a2d73e-fa66-42cf-b9e4-c61da0fb041a
         @ART_START_LOCATION@=d3892b43-18be-4870-8d9b-02f5318f9cd5
         @LAST_PHARMACY_PICK_UP@=f47620e7-a45f-4b29-a3b3-7bcd6958e7a4
-
-        @PREGNANCY_CHECK@=be075303-3a46-4b89-8b8c-912acb2a75e7
-        @OPD_ARV_IPD_TB_SELECTION@=1b79cdbb-82ba-4228-ab11-b4e2363a86f0
-        @OPD_TEST@=359269a6-a276-4219-8197-f27c1d5f5cd8
-        @ARV_TEST@=acd19161-816a-40a1-beac-a18bfc861b58
-        @IPD_TEST@=58ee5fc5-2af0-440b-b5f5-d54852fe66ea
-        @TB_TEST@=48c3029e-7295-4d18-92c3-9872a3286108
-        @IN_PATIENT@=eb86013d-446e-404b-9a22-82eb57f55532
-        @NUTRITION@=0b9ec1eb-49ca-48dc-9aa6-63366b2104b3
-        @VMMC@=b253739d-918d-4131-a268-ee698e120a98
-        @OTHER_SPECIFY@=924a301c-c556-4f87-9476-226c0f8b2859
-        @OTHER_SPECIFY_PIT@=e5d5be46-28be-4ec8-a4a8-2ae10c0c039c
-
-
         paperFormId = (Fill this in)
         headerColor =#009d8e
         fontOnHeaderColor = white
@@ -115,15 +101,15 @@
         }
 
         .section {
-            border: 1px solid $headerColor;
+            border: 1px solid #009d8e;
             padding: 2px;
             text-align: left;
             margin-bottom: 1em;
         }
 
         .sectionHeader {
-            background-color: $headerColor;
-            color: $fontOnHeaderColor;
+            background-color: #009d8e;
+            color: white;
             display: block;
             padding: 2px;
             font-weight: bold;
@@ -179,9 +165,21 @@
     <script type="text/javascript">
 
         if (jQuery) {
-            $j(document).ready(function () {
-
-
+            $j(document).ready(function () {                
+                $j('#Recency_Assay_test_done').click(function () {
+                    if (!getValue('Recency_Assay_test_done.value')) {
+                        $j('#Test_name').hide();
+                        $j('#Test_date').hide();
+                        return;
+                    }
+                    if (getValue('Recency_Assay_test_done.value') == "1065") {
+                        $j('#Test_name').show();
+                        $j('#Test_date').show();
+                    } else {
+                        $j('#Test_name').hide();
+                        $j('#Test_date').hide();
+                    }
+                });
             });
 
             //If  submission does not work redirect with an error message
@@ -195,7 +193,6 @@
                 var indexType = getValue('indexType.value');
                 var residence_type = getValue('residence_type.value');
                 var employmentStatus = getValue('employmentStatus.value');
-                var pregnancyStatus = getValue('pregnancyStatus.value');
                 var occupation = getValue('occupation.value');
                 var how_relation_sex = getValue('how_relation_sex.value');
                 var lifetime_sexual = getValue('lifetime_sexual.value');
@@ -211,8 +208,6 @@
                 var Date_of_HIV_positive_results_confirmation = getValue('Date_of_HIV_positive_results_confirmation.value');
                 var Testing_Clinic = getValue('Testing_Clinic.value');
                 var Recency_Assay_test_done = getValue('Recency_Assay_test_done.value');
-                var Test_name = getValue('Test_name.value');
-                var Test_date = getValue('Test_date.value');
                 var Recency_assay_results = getValue('Recency_assay_results.value');
                 var Counselled_on_Linkage = getValue('Counselled_on_Linkage.value');
                 var treatLink = getValue('treatLink.value');
@@ -221,7 +216,7 @@
                 var stable = getValue('stable.value');
                 var Last_Pharmacy_pick = getValue('Last_Pharmacy_pick.value');
 
-                if (!date || !location || !provider || !ispatientenrolled || !patientenrolleddate || !indexType || !residence_type || !employmentStatus || !pregnancyStatus || !occupation || !how_relation_sex || !lifetime_sexual || !sexual_Partner_12 || !sexual_Partner_3 || !Sex_with_male || !Sex_with_female || !Sex_with_hiv_person || !Sex_with_commercial_sex_worker || !Sex_with_multiple_person || !been_commercial_sex_worker || !Testing_facility_name || !Date_of_HIV_positive_results_confirmation || !Testing_Clinic || !Recency_Assay_test_done || !Test_name || !Test_date || !Recency_assay_results || !Counselled_on_Linkage || !treatLink || !yesTreatLink || !tbMeds || !stable || !Last_Pharmacy_pick) {
+                if (!date || !location || !provider || !ispatientenrolled || !patientenrolleddate || !indexType || !residence_type || !employmentStatus || !occupation || !how_relation_sex || !lifetime_sexual || !sexual_Partner_12 || !sexual_Partner_3 || !Sex_with_male || !Sex_with_female || !Sex_with_hiv_person || !Sex_with_commercial_sex_worker || !Sex_with_multiple_person || !been_commercial_sex_worker || !Testing_facility_name || !Date_of_HIV_positive_results_confirmation || !Testing_Clinic || !Recency_Assay_test_done || !Recency_assay_results || !Counselled_on_Linkage || !treatLink || !yesTreatLink || !tbMeds || !stable || !Last_Pharmacy_pick) {
                     getField('encounterDate.error').html('This field is required').show();
                     getField('encounterLocation.error').html('This field is required').show();
                     getField('encounterProvider.error').html('This field is required').show();
@@ -230,7 +225,6 @@
                     getField('indexType.error').html('This field is required').show();
                     getField('residence_type.error').html('This field is required').show();
                     getField('employmentStatus.error').html('This field is required').show();
-                    getField('pregnancyStatus.error').html('This field is required').show();
                     getField('occupation.error').html('This field is required').show();
                     getField('how_relation_sex.error').html('This field is required').show();
                     getField('lifetime_sexual.error').html('This field is required').show();
@@ -246,8 +240,6 @@
                     getField('Date_of_HIV_positive_results_confirmation.error').html('This field is required').show();
                     getField('Testing_Clinic.error').html('This field is required').show();
                     getField('Recency_Assay_test_done.error').html('This field is required').show();
-                    getField('Test_name.error').html('This field is required').show();
-                    getField('Test_date.error').html('This field is required').show();
                     getField('Recency_assay_results.error').html('This field is required').show();
                     getField('Counselled_on_Linkage.error').html('This field is required').show();
                     getField('treatLink.error').html('This field is required').show();
@@ -341,15 +333,6 @@
                     <obs conceptId="$@MAIN_ACTIVITY@" labelText="Ocupation:"
                         answerConceptIds="$@TRADING@,$@FARMER@,$@STUDENT@,$@UNEMPLOYED@,$@OTHER_NON-CODED@,$@MANUAL_LABORER@,$@SHEPHERD@,$@BREWER@,$@SHOP_OWNER@,$@FRUIT_OR_VEGETABLE_SELLER@,$@MINER@,$@FACTORY_WORKER@,$@HOUSEWORK@,$@RETIRED@,$@MAIN_ACTIVITY_NON_CODED@,$@UNKNOWN@,$@TOO_SICK_TO_WORK@,$@SCHOOL_AGE_BUT_NOT_IN_SCHOOL@,$@DRIVER@,$@PROFESSIONAL@"
                         id="occupation" required="true" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Si enceinte, oui / non (If pregnant, Yes / No)
-                </td>
-                <td>
-                    <obs conceptId="$@PREGNANCY_CHECK@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui),No(Non)"
-                        style="radio" required="true" id="pregnancyStatus" />
                 </td>
             </tr>
         </table>
@@ -470,18 +453,7 @@
                         answerLabels="VCT,ANC(CPN),L and D(Mat),Transfer IN, PIT " id="Testing_Clinic" required="true"
                         style="radio" />
                 </td>
-                <td>
-                    <div>
-                        If PIT is checked (Si PIT est vérifié) :
-                         <obs conceptId="$@OPD_ARV_IPD_TB_SELECTION@"
-                            answerConceptIds="$@OPD_TEST@,$@ARV_TEST@,$@IPD_TEST@,$@TB_TEST@,$@IN_PATIENT@,$@NUTRITION@,$@VMMC@,$@OTHER_SPECIFY@"
-                            answerLabels="OPD,ARV,TPD,TB,IN-PATIENT,NUTRITION,VMMC,other" /> 
-                    </div>
-                    <div>
-                        If other is selected please specify (Si autre est sélectionné, veuillez préciser):
-                        <obs conceptId="$@OTHER_SPECIFY_PIT@" />
-                    </div>
-                </td>
+                <td></td>
             </tr>
         </table>
     </section>
@@ -495,9 +467,9 @@
                         <obs conceptId="$@RECENCY_ASSAY_TEST@" answerConceptIds="$@YES@, $@NO@"
                             answerLabels="Yes(Oui), No(Non)" labelText="Recency Assay test done:"
                             id="Recency_Assay_test_done" required="true" style="radio" /><br /><br />
-                        <obs conceptId="$@RECENCY_TEST_NAME@" required="true" labelText="Test name" id="Test_name" />
+                        <obs conceptId="$@RECENCY_TEST_NAME@" labelText="Test name" id="Test_name" />
                         <br /><br />
-                        <obs conceptId="$@RECENCY_TEST_DATE@" required="true" labelText="Test date:" id="Test_date" />
+                        <obs conceptId="$@RECENCY_TEST_DATE@" labelText="Test date:" id="Test_date" />
                     </td>
                     <td><strong>Recency assay results:</strong><br />
                         <obs conceptId="$@RECENCY_ASSAY_RESULTS@"
