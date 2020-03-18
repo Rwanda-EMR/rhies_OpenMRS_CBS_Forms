@@ -430,7 +430,7 @@
             <tr>
                 <td width="50%">Date:</td>
                 <td>
-                    <encounterDate id="encounterDate" required="true" />
+                    <encounterDate default="today" id="encounterDate" />
                 </td>
             </tr>
             <tr>
@@ -482,8 +482,7 @@
                     Le site où l'échantillon a été référé (Site where sample was referred):
                 </td>
                 <td>
-                    <!-- <obs conceptId="$@CBS_SAMPLE_REFERRAL_SITE@" /> -->
-                    <encounterLocation />
+                    <obs conceptId="$@CBS_SAMPLE_REFERRAL_SITE@" />
                 </td>
             </tr>
             <tr>
