@@ -38,7 +38,7 @@
         @VCT_PROGRAM@=3cdc8426-26fe-102b-80cb-0017a47871b2
         @ANC_Program@=0a48138e-f478-4ad7-bb10-d9efdbf9fe27
         @LABOR_AND_DELIVERY_PROGRAM@=2b9fd535-2222-4418-9249-ddb851362424
-        @TRANSFER_IN@=8fa7c91c-5865-4216-bc10-f8857f116556
+        @TRANSFER_IN@=031ea34b-f95b-4cf7-a3c6-026f6fd60f1f
         @PIT@=d261f305-93ee-47ef-a327-0243783637e0
         @DATE_HIV_POISITIVE_RESULT_CONFIRMED@=93721b11-0a32-44a3-8b4e-64664becffb8
         @HIV_TESTING_FACILITY_NAME@=75efa569-f095-4caf-9a44-f8d8e4564a4a
@@ -75,7 +75,7 @@
         @PATIENT_IN_TUBERCULOSIS_TREATMENT@=8f77f097-f2d4-4c26-97c6-a32863dd2dec
         @TPT_DRUGS_OUT_OF_STOCK@=39cecd62-41b5-4673-a6aa-54cb5fd1246b
         @OTHER_REASON_PATIENT_NOT_INITIATED_ON_TPT@=3c4ef122-ce21-4b2f-b9e7-65f5d84a7758
-        @STABLE@=5f2ce4b3-dc0f-4345-98ad-4177329b2388
+        @STABLE@=fab9afe9-8c11-4e31-9898-399b083fd9d6
         @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
         @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
         @PATIENT_REFUSED@=efab937b-853e-47da-b97e-220f1bdff97d
@@ -83,10 +83,9 @@
         @CURRENTLY_ON_ART@=c7df527f-eef0-4cdc-b142-c5a387b4c363
         @NEW_HIV_DIAGNOSIS@=87842c52-dc3d-41d7-9baa-9c0da45c5df4
         @CBS_INDEX_CASE_TYPE@=b45597da-318b-4dde-858b-da16f5950686
-        @TRANSFER_IN@=8fa7c91c-5865-4216-bc10-f8857f116556
+        @TRANSFER_IN@=031ea34b-f95b-4cf7-a3c6-026f6fd60f1f
         @ART_INITIATED_AT_FACILITY@=e4a2d73e-fa66-42cf-b9e4-c61da0fb041a
         @ART_START_LOCATION@=d3892b43-18be-4870-8d9b-02f5318f9cd5
-        @LAST_PHARMACY_PICK_UP@=f47620e7-a45f-4b29-a3b3-7bcd6958e7a4
         paperFormId = (Fill this in)
         headerColor =#009d8e
         fontOnHeaderColor = white
@@ -166,72 +165,16 @@
             beforeSubmit.push(function () {
 
                 var date = getValue('encounterDate.value');
+                var provider = getValue('encounterProvider.value');
                 var location = getValue('encounterLocation.value');
-                var provider = getValue('encounterProvider.value');                   
-                var ispatientenrolled =getValue('ispatientenrolled.value');
-                var patientenrolleddate =getValue('patientenrolleddate.value');
-                var indexType =getValue('indexType.value');
-                var residence_type =getValue('residence_type.value');
-                var employmentStatus =getValue('employmentStatus.value');
-                var occupation =getValue('occupation.value');
-                var how_relation_sex =getValue('how_relation_sex.value');
-                var lifetime_sexual =getValue('lifetime_sexual.value');
-                var sexual_Partner_12 =getValue('sexual_Partner_12.value');
-                var sexual_Partner_3 =getValue('sexual_Partner_3.value');
-                var Sex_with_male =getValue('Sex_with_male.value');
-                var Sex_with_female =getValue('Sex_with_female.value');
-                var Sex_with_hiv_person =getValue('Sex_with_hiv_person.value');
-                var Sex_with_commercial_sex_worker = getValue('Sex_with_commercial_sex_worker.value');
-                var Sex_with_multiple_person =getValue('Sex_with_multiple_person.value');
-                var been_commercial_sex_worker =getValue('been_commercial_sex_worker.value');
-                var Testing_facility_name =getValue('Testing_facility_name.value');
-                var Date_of_HIV_positive_results_confirmation =getValue('Date_of_HIV_positive_results_confirmation.value');
-                var Testing_Clinic =getValue('Testing_Clinic.value');
-                var Recency_Assay_test_done =getValue('Recency_Assay_test_done.value');
-                var Test_name =getValue('Test_name.value');
-                var Test_date =getValue('Test_date.value');
-                var Recency_assay_results =getValue('Recency_assay_results.value');
-                var Counselled_on_Linkage =getValue('Counselled_on_Linkage.value');
-                var treatLink =getValue('treatLink.value');
-                var yesTreatLink =getValue('yesTreatLink.value');
-                var tbMeds =getValue('tbMeds.value');
-                var stable =getValue('stable.value');
-                var Last_Pharmacy_pick =getValue('Last_Pharmacy_pick.value');
+                var indexCaseType =getValue('indexType.value');
 
-                if (!date || !location || !provider ||  !ispatientenrolled || !patientenrolleddate || !indexType || !residence_type || !employmentStatus || !occupation || !how_relation_sex || !lifetime_sexual || !sexual_Partner_12 || !sexual_Partner_3 || !Sex_with_male || !Sex_with_female || !Sex_with_hiv_person || !Sex_with_commercial_sex_worker ||  !Sex_with_multiple_person || !been_commercial_sex_worker || !Testing_facility_name || !Date_of_HIV_positive_results_confirmation || !Testing_Clinic || !Recency_Assay_test_done || !Test_name || !Test_date || !Recency_assay_results || !Counselled_on_Linkage || !treatLink || !yesTreatLink || !tbMeds || !stable || !Last_Pharmacy_pick) {
+                if (!date || !provider || !location || !indexCaseType) {
                     getField('encounterDate.error').html('This field is required').show();
+                    getField('encounterProvider.error').html('This field is required').show();
                     getField('encounterLocation.error').html('This field is required').show();
-                    getField('encounterProvider.error').html('This field is required').show(); 
-                    getField('ispatientenrolled.error').html('This field is required').show();
-                    getField('patientenrolleddate.error').html('This field is required').show();
                     getField('indexType.error').html('This field is required').show();
-                    getField('residence_type.error').html('This field is required').show();
-                    getField('employmentStatus.error').html('This field is required').show();
-                    getField('occupation.error').html('This field is required').show();
-                    getField('how_relation_sex.error').html('This field is required').show();                    
-                    getField('lifetime_sexual.error').html('This field is required').show();
-                    getField('sexual_Partner_12.error').html('This field is required').show();
-                    getField('sexual_Partner_3.error').html('This field is required').show();
-                    getField('Sex_with_male.error').html('This field is required').show();
-                    getField('Sex_with_female.error').html('This field is required').show();
-                    getField('Sex_with_hiv_person.error').html('This field is required').show();
-                    getField('Sex_with_commercial_sex_worker.error').html('This field is required').show();
-                    getField('Sex_with_multiple_person.error').html('This field is required').show();
-                    getField('been_commercial_sex_worker.error').html('This field is required').show();
-                    getField('Testing_facility_name.error').html('This field is required').show();                    
-                    getField('Date_of_HIV_positive_results_confirmation.error').html('This field is required').show();
-                    getField('Testing_Clinic.error').html('This field is required').show();
-                    getField('Recency_Assay_test_done.error').html('This field is required').show();
-                    getField('Test_name.error').html('This field is required').show();
-                    getField('Test_date.error').html('This field is required').show();
-                    getField('Recency_assay_results.error').html('This field is required').show();
-                    getField('Counselled_on_Linkage.error').html('This field is required').show();
-                    getField('treatLink.error').html('This field is required').show();
-                    getField('yesTreatLink.error').html('This field is required').show();
-                    getField('tbMeds.error').html('This field is required').show();                    
-                    getField('stable.error').html('This field is required').show();
-                    getField('Last_Pharmacy_pick.error').html('This field is required').show();                    
-                                        window.scrollTo({top: 0, behavior: 'smooth'});
+                    window.scrollTo({top: 0, behavior: 'smooth'});
                     return false;
                 } else {
                     return true;
@@ -250,15 +193,15 @@
         <table class="baseline-aligned">
             <tr>
                 <td>Date:</td>
-                <td><encounterDate default="today" id="encounterDate" required="true"/></td>
+                <td><encounterDate default="today" id="encounterDate"/></td>
             </tr>
             <tr>
                 <td>Location:</td>
-                <td><encounterLocation default="10"  id="encounterLocation" required="true"/></td>
+                <td><encounterLocation default="476"  id="encounterLocation"/></td>
             </tr>
             <tr>
                 <td>Provider:</td>
-                <td><encounterProvider id="encounterProvider" required="true"/></td>
+                <td><encounterProvider id="encounterProvider"/></td>
             </tr>
             <tr>
                 <td><enrollInProgram programId="27"/></td>
@@ -270,8 +213,8 @@
             <th colspan="3" style="text-align:center">INDEX TESTING, PARTNER NOTIFICATION, RECENCY TESTING</th>
         </tr>
         <tr>
-            <td>Patient enrolled in CBS Program &#160;&#160;&#160;<obs conceptId="$@ENROLLED_IN_CBS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N" id="ispatientenrolled" required="true" style="radio"/> <br/> Contact Code &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@"/><br/> UPID &#160;&#160;&#160;<lookup class="value" complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end "/></td>
-        <td>Date: &#160;&#160;&#160; <encounterDate default="today" id="patientenrolleddate" required="true"/></td>
+            <td>Patient enrolled in CBS Program &#160;&#160;&#160;<obs conceptId="$@ENROLLED_IN_CBS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/> <br/> Contact Code &#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_CODE@"/><br/> UPID &#160;&#160;&#160;<lookup class="value" complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end "/></td>
+        <td>Date: &#160;&#160;&#160; <encounterDate default="today"/></td>
         <td>Index case type (Type de cas index): <br/><obs conceptId="$@CBS_INDEX_CASE_TYPE@" answerConceptIds="$@NEW_HIV_DIAGNOSIS@, $@CURRENTLY_ON_ART@" answerLabels="Newly diagnosed (Nouvellement diagnostiqué VIH+), Currently on ART (Déjà sous ARV)" style="radio" id="indexType" required="true"/>
         <br/>
         &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -283,10 +226,10 @@
     <section headerLabel="2. Demographic Information">
         <table class="baseline-aligned">
             <tr>
-            <td>Current residence type <i>(Type d'adresse)</i>: <obs conceptId="$@RESIDENCY_TYPE@" answerConceptIds="$@RESIDENCY_TYPE_SHELTER@, $@RESIDENCY_TYPE_RESIDENTIAL@,$@RESIDENCY_TYPE_HOMELESS@,$@RESIDENCY_TYPE_HOMELESS@, $@RESIDENCY_TYPE_TEMPORARY@" answerLabels="Residential (Residentielle), Temporary (Temporaire), Shelter (Refuge), Correctional (Maison de detention),Homeless (Sans abri)" id="residence_type" required="true"/></td>
+            <td>Current residence type <i>(Type d'adresse)</i>: <obs conceptId="$@RESIDENCY_TYPE@" answerConceptIds="$@RESIDENCY_TYPE_SHELTER@, $@RESIDENCY_TYPE_RESIDENTIAL@,$@RESIDENCY_TYPE_HOMELESS@,$@RESIDENCY_TYPE_HOMELESS@, $@RESIDENCY_TYPE_TEMPORARY@" answerLabels="Residential (Residentielle), Temporary (Temporaire), Shelter (Refuge), Correctional (Maison de detention),Homeless (Sans abri)"/></td>
             <td>Employment status<i> (Etat d'emploi)</i>:
-            <obs conceptId="$@EMPLOYMENT_STATUS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Employed (Employé), Unemployed  (Sans emploi)" style="radio" id="employmentStatus" required="true"/><br/><br/>
-            <obs conceptId="$@MAIN_ACTIVITY@" labelText="Ocupation:" answerConceptIds="$@TRADING@,$@FARMER@,$@STUDENT@,$@UNEMPLOYED@,$@OTHER_NON-CODED@,$@MANUAL_LABORER@,$@SHEPHERD@,$@BREWER@,$@SHOP_OWNER@,$@FRUIT_OR_VEGETABLE_SELLER@,$@MINER@,$@FACTORY_WORKER@,$@HOUSEWORK@,$@RETIRED@,$@MAIN_ACTIVITY_NON_CODED@,$@UNKNOWN@,$@TOO_SICK_TO_WORK@,$@SCHOOL_AGE_BUT_NOT_IN_SCHOOL@,$@DRIVER@,$@PROFESSIONAL@" id="occupation" required="true"/>
+            <obs conceptId="$@EMPLOYMENT_STATUS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Employed (Employé), Unemployed  (Sans emploi)" style="radio" id="employmentStatus"/><br/><br/>
+            <obs conceptId="$@MAIN_ACTIVITY@" labelText="Ocupation:" answerConceptIds="$@TRADING@,$@FARMER@,$@STUDENT@,$@UNEMPLOYED@,$@OTHER_NON-CODED@,$@MANUAL_LABORER@,$@SHEPHERD@,$@BREWER@,$@SHOP_OWNER@,$@FRUIT_OR_VEGETABLE_SELLER@,$@MINER@,$@FACTORY_WORKER@,$@HOUSEWORK@,$@RETIRED@,$@MAIN_ACTIVITY_NON_CODED@,$@UNKNOWN@,$@TOO_SICK_TO_WORK@,$@SCHOOL_AGE_BUT_NOT_IN_SCHOOL@,$@DRIVER@,$@PROFESSIONAL@" id="occupation"/>
             </td>
             </tr>
         </table>
@@ -298,19 +241,19 @@
                 <td>
                     <table>
                         <tr><strong>Vaginal or Anal sex without condoms in last 12 months:</strong><br><i>(Relation sexuelle vaginale ou anale sans condom durant les 12 Derniers mois):</i></br>
-                        <br><obs conceptId="$@VAGINAL_OR_ANAL_SEX_WITHOUT_CONDOMS_IN_LAST_12_MONTHS@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No, Refuse,Unknown" style="radio" id="how_relation_sex" required="true"/></br>
+                        <br><obs conceptId="$@VAGINAL_OR_ANAL_SEX_WITHOUT_CONDOMS_IN_LAST_12_MONTHS@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No, Refuse,Unknown" style="radio"/></br>
             </tr>
             <tr>
                 <td><strong># Lifetime sexual partners: </strong> <br> (Nbr de Partenaires sexuels durant votre vie)</br></td>
-                <td><obs conceptId="$@NUMBER_OF_LIFETIME_SEXUAL_PARTNERS@" id="lifetime_sexual" required="true"/> <br/></td>
+                <td><obs conceptId="$@NUMBER_OF_LIFETIME_SEXUAL_PARTNERS@" /> <br/></td>
             </tr><br> </br>
             <tr>
                 <td><strong>#Sexual Partner in last 12 months: </strong><br>(Nbr de Partenaires sexuels durant les 12 derniers mois)</br></td>
-                <td><obs conceptId="$@SEXUAL_PARTNERS_IN_LAST_12_MONTHS@" id="sexual_Partner_12" required="true"/> <br/></td>
+                <td><obs conceptId="$@SEXUAL_PARTNERS_IN_LAST_12_MONTHS@"/> <br/></td>
             </tr><br> </br>
             <tr>
                 <td><strong>#Sexual Partner in last 3 months:</strong> <br>(Nbr de Partenaires sexuels durant les 3 derniers mois)</br></td>
-                <td><obs conceptId="$@SEXUAL_PARTNERS_IN_LAST_3_MONTHS@" id="sexual_Partner_3" required="true"/> <br/></td>
+                <td><obs conceptId="$@SEXUAL_PARTNERS_IN_LAST_3_MONTHS@"/> <br/></td>
             </tr>                    
         </table>
         </td>
@@ -319,27 +262,27 @@
                 <tr><strong>Exposure Category (Catégorie d'exposition): </strong></tr>
                 <tr>
                     <td><strong>Sex with male:</strong><br>(Relation sexuelle avec un homme)</br></td>
-                    <td><obs conceptId="$@SEX_WITH_MALE@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="Sex_with_male" required="true" style="radio"/> <br/></td>
+                    <td><obs conceptId="$@SEX_WITH_MALE@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/> <br/></td>
         </tr>
         <tr>
             <td><strong>Sex with female:</strong><br>(Relation sexuelle avec un femme)</br></td>
-            <td><obs conceptId="$@SEX_WITH_FEMALE@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="Sex_with_female" required="true" style="radio"/> <br/></td>
+            <td><obs conceptId="$@SEX_WITH_FEMALE@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/> <br/></td>
         </tr>
         <tr>
             <td><strong>Sex with HIV+ person:</strong><br>(Relation sexuelle avec une PVV)</br></td>
-            <td><obs conceptId="$@CBS_SEX_WITH_HIV_POSITIVE_PERSON@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="Sex_with_hiv_person" required="true" style="radio"/></td>
+            <td><obs conceptId="$@CBS_SEX_WITH_HIV_POSITIVE_PERSON@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/></td>
         </tr>
         <tr>
             <td><strong>Sex with commercial sex worker:</strong><br>(Relation sexuelle avec un travailleur de sexe)</br></td>
-            <td><obs conceptId="$@SEX_WITH_COMMERCIAL_SEX_WORKER@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="Sex_with_commercial_sex_worker" required="true" style="radio"/> <br/></td>
+            <td><obs conceptId="$@SEX_WITH_COMMERCIAL_SEX_WORKER@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/> <br/></td>
         </tr>
         <tr>
             <td><strong>Sex with multiple partners:</strong><br>(Relation sexuelle avec partenaires multiples)</br></td>
-            <td><obs conceptId="$@SEX_WITH_MULTIPLE_PARTNERS@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="Sex_with_multiple_person" required="true" style="radio"/> <br/></td>
+            <td><obs conceptId="$@SEX_WITH_MULTIPLE_PARTNERS@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/> <br/></td>
         </tr>
         <tr>
             <td><strong>Is/Has been commercial sex worker:</strong><br>(A ete travailleur de sexe)</br></td>
-            <td colspan="4"><obs conceptId="$@IS/HAS_BEEN_COMMERCIAL_SEX_WORKER@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" id="been_commercial_sex_worker" required="true" style="radio"/> <br/></td>
+            <td colspan="4"><obs conceptId="$@IS/HAS_BEEN_COMMERCIAL_SEX_WORKER@" answerConceptIds="$@YES@,$@NO@,$@PATIENT_REFUSED@,$@UNKNOWN@" answerLabels="Yes,No,Refuse,Unknown" style="radio"/> <br/></td>
         </tr>                          
         </table>
         </td>
@@ -350,11 +293,11 @@
     <section headerLabel="HIV Testing Information ">
         <table class="baseline-aligned">
             <tr>
-                <td>Testing facility name (Nom de la FOSA de dépistage)<obs conceptId="$@HIV_TESTING_FACILITY_NAME@" id="Testing_facility_name" required="true"/></td>
-            <td>Date of HIV positive results confirmation (Date de confirmation du status VIH) <obs conceptId="$@DATE_HIV_POISITIVE_RESULT_CONFIRMED@" id="Date_of_HIV_positive_results_confirmation" required="true"/></td>
+                <td>Testing facility name (Nom de la FOSA de dépistage)<obs conceptId="$@HIV_TESTING_FACILITY_NAME@"/></td>
+            <td>Date of HIV positive results confirmation (Date de confirmation du status VIH) <obs conceptId="$@DATE_HIV_POISITIVE_RESULT_CONFIRMED@"/></td>
             </tr>
             <tr>
-                <td>Testing Clinic (Test clinique)&#160;&#160;&#160;&#160;<obs conceptId="$@HIV_TESTING_CLINIC@" answerConceptIds="$@VCT_PROGRAM@,$@ANC_Program@,$@LABOR_AND_DELIVERY_PROGRAM@,$@TRANSFER_IN@,$@PIT@" answerLabels="VCT,ANC(CPN),L and D(Mat),Transfer IN, PIT " id="Testing_Clinic" required="true" style="radio"/>
+                <td>Testing Clinic (Test clinique)&#160;&#160;&#160;&#160;<obs conceptId="$@HIV_TESTING_CLINIC@" answerConceptIds="$@VCT_PROGRAM@,$@ANC_Program@,$@LABOR_AND_DELIVERY_PROGRAM@,$@TRANSFER_IN@,$@PIT@" answerLabels="VCT,ANC(CPN),L and D(Mat),Transfer IN, PIT " style="radio"/>
             </td>
             <td></td>
             </tr>
@@ -367,12 +310,12 @@
                 <tr>
                     <td>
                         <strong>Recency Assay test done:</strong> <br/>
-                <obs conceptId="$@RECENCY_ASSAY_TEST@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)"  labelText="Recency Assay test done:" id="Recency_Assay_test_done" required="true" style="radio"/><br/><br/>
-                <obs conceptId="$@RECENCY_TEST_NAME@" required="true" labelText="Test name" id="Test_name"/><br/><br/>
-                <obs conceptId="$@RECENCY_TEST_DATE@" required="true" labelText="Test date:" id="Test_date"/>
+                <obs conceptId="$@RECENCY_ASSAY_TEST@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)"  labelText="Recency Assay test done:" style="radio"/><br/><br/>
+                <obs conceptId="$@RECENCY_TEST_NAME@" labelText="Test name"/><br/><br/>
+                <obs conceptId="$@RECENCY_TEST_DATE@" labelText="Test date:"/>
                 </td>
                 <td><strong>Recency assay results:</strong><br/>
-                <obs conceptId="$@RECENCY_ASSAY_RESULTS@" answerConceptIds="$@RECENT@, $@LONG-TERM@, $@NEGATIVE@, $@INVALID@" answerLabels="Recent, Long-term, Negative, Invalid" required="true" style="radio" id="Recency_assay_results"/>
+                <obs conceptId="$@RECENCY_ASSAY_RESULTS@" answerConceptIds="$@RECENT@, $@LONG-TERM@, $@NEGATIVE@, $@INVALID@" answerLabels="Recent, Long-term, Negative, Invalid"  style="radio" />
                 </td>
                 </tr> <br></br>   
             </table>
@@ -383,12 +326,12 @@
                 <th>Counselled on Linkage</th><th> Linked to treatment</th>
                 <tr>
                     <td>
-                <obs conceptId="$@COUNSELLED_ON_LINKAGE@" labelText="Counselled on Linkage" id="Counselled_on_Linkage" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" required="true" style="radio"/> 
+                <obs conceptId="$@COUNSELLED_ON_LINKAGE@" labelText="Counselled on Linkage" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio"/> 
                 </td>
                 <td>
-                <obs conceptId="$@LINKED_TO_TREATMENT@" labelText="Linked to treatment" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio" id="treatLink" required="true"/><br/><br/>
+                <obs conceptId="$@LINKED_TO_TREATMENT@" labelText="Linked to treatment" answerConceptIds="$@YES@, $@NO@"    answerLabels="Yes(Oui), No(Non)" style="radio" id="treatLink"/><br/><br/>
                 <obs conceptId="$@REASON_NOT_LINKED_TO_TREATMENT@" labelText="If no, why" id="noTreatLink"/><br/><br/>
-                <obs conceptId="$@LINKED_TO_TREATMENT_AT_THIS_FACILITY@" labelText="Linked to treatment at this facility?" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio" id="yesTreatLink" required="true" /><br/><br/>
+                <obs conceptId="$@LINKED_TO_TREATMENT_AT_THIS_FACILITY@" labelText="Linked to treatment at this facility?" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio" id="yesTreatLink"/><br/><br/>
                 <!-- <obs conceptId="$@LINKED_TO_TREATMENT_IN_OTHER_FACILITY@" labelText="If no, where" id="otherTreatLink"/> -->
                 </td>
                 </tr>                   
@@ -400,12 +343,12 @@
         <table class="baseline-aligned">
             <tr>
                 <td>
-            <obs conceptId="$@INITIATED_ON_TPT@" labelText="Initiated on TPT" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio" id="tbMeds" required="true" />
+            <obs conceptId="$@INITIATED_ON_TPT@" labelText="Initiated on TPT" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio" id="tbMeds"/>
             <br/><br/>
             <obs conceptId="$@TPT_START_DATE@" labelText="If Yes, TPT start Date (Si oui, date de début du TPT):" id="yesTbMeds"/><br/><br/>
             </td>
             </tr> 
-            <tr class="checkboxGroup" id="noTbMeds" >
+            <tr class="checkboxGroup" id="noTbMeds">
                 <td>If No, reasons (Si non, pour quelles raisons) <br/>
                     &#160;&#160;&#160;&#160;&#160; 
             <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@" labelText="Patient not willing (Le client n’est pas encore prêt pour le TPT)" answerConceptId="$@PATIENT_NOT_WILLING@" answerLabel="" id="aliveOnArt"/>
@@ -432,8 +375,8 @@
     <section headerLabel="CURRENT/LAST ART TREATMENT INFORMATION">
         <table class="baseline-aligned" width="60%">
             <tr>
-                <td>&#160;&#160;&#160;&#160;&#160;<obs conceptId="$@STABLE@" labelText="Stable" id="stable" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" required="true" style="radio"/></td>
-            <td>Last Pharmacy pick up: &#160;&#160;&#160;&#160;&#160;<obs conceptId="$@LAST_PHARMACY_PICK_UP@" id="Last_Pharmacy_pick" required="true"/></td>
+                <td>&#160;&#160;&#160;&#160;&#160;<obs conceptId="$@STABLE@" labelText="Stable" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio"/></td>
+            <td>Last Pharmacy pick up: &#160;&#160;&#160;&#160;&#160;<encounterDate default="today"/></td>
             </tr>                             
         </table>
     </section>

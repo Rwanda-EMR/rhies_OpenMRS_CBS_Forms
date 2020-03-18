@@ -4,8 +4,8 @@
         headerColor =#009d8e
         fontOnHeaderColor = white
         @ENROLLMENT_DATE@ = badacf97-0970-4dde-aee4-5e1c2bb125f7
+        @CBS_SAMPLE_REFERRAL_SITE@=e4e62a59-91cf-4323-a140-aeaceae6c520
         @DATE_ANTI_RETROVIRALS_STARTED@ = 3ce498dc-26fe-102b-80cb-0017a47871b2
-        @CBS_SAMPLE_REFERRAL_SITE@=f4c7688e-28b4-4571-b6bc-4118c477fe7b
         @DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@=9fa91969-35bc-48aa-8ffd-fea157299d4d
         @DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@=092e2163-e657-4961-b554-96ce2c21d051
 
@@ -296,20 +296,13 @@
                     var date = getValue('encounterDate.value');
                     var provider = getValue('encounterProvider.value');
                     var location = getValue('encounterLocation.value');
-                    var enrollment = getValue('enrollDate.value');          
-                    var testedForHIV = getValue('testedForHIV.value');
-                    var artStartOpts = getValue('artStartOpts.value');
-                    var contact_tested = getValue('artStartOpts.value');
+                    var enrollment = getValue('enrollDate.value');
 
-
-                    if (!date || !provider || !location || !enrollment || !testedForHIV || !artStartOpts || !contact_tested ) {
+                    if (!date || !provider || !location || !enrollment) {
                         getField('encounterDate.error').html('This field is required').show();
                         getField('encounterProvider.error').html('This field is required').show();
                         getField('encounterLocation.error').html('This field is required').show();
                         getField('enrollDate.error').html('This field is required').show();
-                        getField('testedForHIV.error').html('This field is required').show();
-                        getField('artStartOpts.error').html('This field is required').show();
-                        getField('contact_tested.error').html('This field is required').show();
                         window.scrollTo({top: 0, behavior: 'smooth'});
                         return false;
                     } else {
@@ -330,7 +323,7 @@
             </tr>
             <tr>
                 <td>Location:</td>
-                <td><encounterLocation default="10"/></td>
+                <td><encounterLocation default="476"/></td>
             </tr>
             <tr>
                 <td>Provider:</td>
@@ -502,7 +495,7 @@
 
                             <tr>
                                 <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
-                                <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" required='true' id="testedForHIV" style="radio"/>
+                                <td><obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" class="testedForHIV" style="radio"/>
                             </td>
                             </tr>
                             <tr class="notTested"><td></td>
@@ -515,8 +508,8 @@
 
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
-                                <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" required='true' id="artStartOpts" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                                <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -524,7 +517,7 @@
                             <tr>
                                 <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not tested, did he/she receive HIV self-testing kit?)</td>
                                 <td>
-                            <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" required='true' id="contact_tested" style="radio"/>
+                            <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio"/>
                             </td>
                             </tr>
                             <tr>
@@ -654,7 +647,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -792,7 +785,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -930,7 +923,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1068,7 +1061,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1206,7 +1199,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1344,7 +1337,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1482,7 +1475,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1620,7 +1613,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet hidden">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
@@ -1758,7 +1751,7 @@
                             <tr class="artInitiation">
                                 <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
                                 <td>ART INITIATION:&#160;&#160;&#160;<obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@" conceptAnswerIds="$@YES@, $@NO@" answerLabels="Y, N" style="radio" class="artStartOpts"/><br/>
-                            <div>  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
+                            <div class="tracnet">  <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"/>
                             </div>
                             </td>
                             </tr>
