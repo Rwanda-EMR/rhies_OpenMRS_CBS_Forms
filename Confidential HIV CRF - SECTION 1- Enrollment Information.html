@@ -165,7 +165,7 @@
     <script type="text/javascript">
 
         if (jQuery) {
-            $j(document).ready(function () {
+            $j(document).ready(function () {                
                 $j('#Recency_Assay_test_done').click(function () {
                     if (!getValue('Recency_Assay_test_done.value')) {
                         $j('#Test_name').hide();
@@ -180,8 +180,6 @@
                         $j('#Test_date').hide();
                     }
                 });
-
-
             });
 
             //If  submission does not work redirect with an error message
@@ -190,6 +188,8 @@
                 var date = getValue('encounterDate.value');
                 var location = getValue('encounterLocation.value');
                 var provider = getValue('encounterProvider.value');
+                var ispatientenrolled = getValue('ispatientenrolled.value');
+                var patientenrolleddate = getValue('patientenrolleddate.value');
                 var indexType = getValue('indexType.value');
                 var residence_type = getValue('residence_type.value');
                 var employmentStatus = getValue('employmentStatus.value');
@@ -216,10 +216,12 @@
                 var stable = getValue('stable.value');
                 var Last_Pharmacy_pick = getValue('Last_Pharmacy_pick.value');
 
-                if (!date || !location || !provider || !indexType || !residence_type || !employmentStatus || !occupation || !how_relation_sex || !lifetime_sexual || !sexual_Partner_12 || !sexual_Partner_3 || !Sex_with_male || !Sex_with_female || !Sex_with_hiv_person || !Sex_with_commercial_sex_worker || !Sex_with_multiple_person || !been_commercial_sex_worker || !Testing_facility_name || !Date_of_HIV_positive_results_confirmation || !Testing_Clinic || !Recency_Assay_test_done || !Recency_assay_results || !Counselled_on_Linkage || !treatLink || !yesTreatLink || !tbMeds || !stable || !Last_Pharmacy_pick) {
+                if (!date || !location || !provider || !ispatientenrolled || !patientenrolleddate || !indexType || !residence_type || !employmentStatus || !occupation || !how_relation_sex || !lifetime_sexual || !sexual_Partner_12 || !sexual_Partner_3 || !Sex_with_male || !Sex_with_female || !Sex_with_hiv_person || !Sex_with_commercial_sex_worker || !Sex_with_multiple_person || !been_commercial_sex_worker || !Testing_facility_name || !Date_of_HIV_positive_results_confirmation || !Testing_Clinic || !Recency_Assay_test_done || !Recency_assay_results || !Counselled_on_Linkage || !treatLink || !yesTreatLink || !tbMeds || !stable || !Last_Pharmacy_pick) {
                     getField('encounterDate.error').html('This field is required').show();
                     getField('encounterLocation.error').html('This field is required').show();
                     getField('encounterProvider.error').html('This field is required').show();
+                    getField('ispatientenrolled.error').html('This field is required').show();
+                    getField('patientenrolleddate.error').html('This field is required').show();
                     getField('indexType.error').html('This field is required').show();
                     getField('residence_type.error').html('This field is required').show();
                     getField('employmentStatus.error').html('This field is required').show();
@@ -292,22 +294,22 @@
             <th colspan="3" style="text-align:center">INDEX TESTING, PARTNER NOTIFICATION, RECENCY TESTING</th>
         </tr>
         <tr>
-            <td>
-                Patient enrolled in CBS Program
+            <td>Patient enrolled in CBS Program &#160;&#160;&#160;
                 <obs conceptId="$@ENROLLED_IN_CBS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N"
-                    style="radio" /> <br /> Contact Code &#160;&#160;&#160;
-                <obs conceptId="$@CBS_CONTACT_CODE@" /><br />
-
-                UPID :
+                    id="ispatientenrolled" required="true" style="radio" /> <br /> Contact Code &#160;&#160;&#160;
+                <obs conceptId="$@CBS_CONTACT_CODE@" /><br /> UPID &#160;&#160;&#160;
                 <lookup class="value"
                     complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end " />
+            </td>
+            <td>Date: &#160;&#160;&#160;
+                <encounterDate default="today" id="patientenrolleddate" required="true" />
             </td>
             <td>Index case type (Type de cas index): <br />
                 <obs conceptId="$@CBS_INDEX_CASE_TYPE@" answerConceptIds="$@NEW_HIV_DIAGNOSIS@, $@CURRENTLY_ON_ART@"
                     answerLabels="Newly diagnosed (Nouvellement diagnostiqué VIH+), Currently on ART (Déjà sous ARV)"
                     style="radio" id="indexType" required="true" />
                 <br />
-
+                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs conceptId="$@ART_START_LOCATION@" answerConceptIds="$@ART_INITIATED_AT_FACILITY@, $@TRANSFER_IN@"
                     answerLabels="Initiated treatment in this facility (Traitement initié par ce site) , Transfer in (Transfert entrant): "
                     style="radio" id="treatInit" />
