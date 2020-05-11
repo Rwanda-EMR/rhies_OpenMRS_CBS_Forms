@@ -1,0 +1,1303 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        @ENROLLMENT_DATE@ = badacf97-0970-4dde-aee4-5e1c2bb125f7
+        @DATE_ANTI_RETROVIRALS_STARTED@ = 3ce498dc-26fe-102b-80cb-0017a47871b2
+        @CBS_SAMPLE_REFERRAL_SITE@=e4e62a59-91cf-4323-a140-aeaceae6c520
+        @DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@=9fa91969-35bc-48aa-8ffd-fea157299d4d
+        @DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@=092e2163-e657-4961-b554-96ce2c21d051
+        @RECENCY_ASSAY_TEST@=e06cffdb-024c-45af-b148-fa275d368fc0
+        @RECENCY_TEST_NAME@=5119a7e8-d4c6-4380-8c12-420cb3deff4d
+        @RECENCY_ASSAY_RESULTS@=b4b0e241-e41a-4d46-89dd-e531cf6d8202
+        @RECENCY_TEST_DATE@=f97c7656-6369-426a-9597-b3fb9acf25af
+        @LONG_TERM@=819f5ebe-0b3e-44ba-b435-8f3d1b7bb130
+        @RECENT@=fb3b2a61-4f4b-46b2-9187-9ec769349a44
+        @INVALID@=9340dede-5124-49cf-9b3c-5153cc0e537f
+        @RECENCY_SAMPLE_COLLECTION_DATE@=774f49dc-cd95-4f7e-a20f-b38f9a1f52c4
+        @NUMBER_OF_FAMILY_MEMBERS@ = fe5fdddf-96ee-42af-9b36-0ab8c3ddd05d
+        @NUMBER_OF_SEXUAL_PARTNERS@ = 3cee2924-26fe-102b-80cb-0017a47871b2
+        @SEXUAL_PARTNERS_IN_LAST_12 MONTHS@=06de84ee-6deb-4d33-b2b6-bc680a73939c
+        @SOCIAL_NETWORK_MEMBERS@ = 504e851d-8a95-4f0f-bcad-ca081a975abf
+        @CBS_CONTACT_AGE@=2ecf52c4-f732-46a8-9f10-45a04ca70f49
+        @CBS_CONTACT_GENDER@=d1ecd154-13b1-433a-8480-3213e178aff7
+        @RELATION_OF_THE_CONTACT_AND_INDEX_CASE@=d4a45c62-5d82-43a2-856d-6c75db9fe842
+        @Spouse_Husband_Fiancé@=78240034-73f3-46d8-b688-81fb99f27056
+        @Girlfiend_Boyfriend@=a71fff61-4db8-43ce-98f8-5de7f689f560
+        @Couple_cohabiting_partner@=8d234f0f-c299-42e5-8edf-f2460e64704e
+        @Casual_partner@=ca27eadb-c14d-414e-8db9-694b3831e719
+        @Somon_who_pay_me_to_have_sex@=a8415b6a-065d-4cd6-9c70-4cdcec7bf8ef
+        @Somone_I_pay_to_have_sexual_relation@=f95bdebd-c174-4eaa-86cf-067f78db5364
+        @Victim_of_violence@=825ee96c-5277-4b29-bece-7d94e654da34
+        @Partner_is_unknown@=7f0dd8e6-f0c3-4cb1-a81e-24391fc7200b
+        @His_her_child@=98463468-4bc0-4df0-8b78-ad5e208c5d2a
+        @Member_of_his_social_network@=1394d37f-38ca-4f8a-a486-ac46e0ed7523
+        @Other_PWID_TG_etc@=d0385b0e-c9ac-4f63-ab8d-b6273c029f9d
+        @CBS_CONTACT_HIV_STATUS@=438e1ee2-5642-4868-867d-960eca6e6451
+        @POSITIVE@=3cd3a7a2-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@=3cd28732-26fe-102b-80cb-0017a47871b2
+        @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @CBS_RISK_OF_VIOLENCE@= 5d90078d-43d5-4ea1-9bf6-cda5398d1d67
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @CBS_PLANNED_REFERENCE_TYPE@=d300cfbb-c771-44db-8272-7065efc88242
+        @CBS_CONTACT_SUCCESSFULLY_INVITED@=0b888b3c-df20-467c-9be9-0e68b779a97d
+        @CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@=cceda879-286d-4dca-8ea8-1168f217fd1c
+        @CBC_UNSUCCESSFUL_CLIENT_REFERRAL@=e5dbe475-9116-4ed6-9349-6ab652bf9b13
+        @CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@=535dcc8a-71fb-47a1-89c6-1e0247ac4b6b
+        @CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@=4db56fa7-e8cc-4ab4-b1bb-22a603dfdb35
+        @CONTACT_REFUSED_NOTIFICATION@=5a3402d4-983b-4015-b673-5d76b6a7beef
+        @CBS_CONTACT_MOVED_OUT_OF_AREA@=55bf58e2-48ff-41cf-a4a4-4b4feba2a140
+        @CBS_CONTACT_NOT_REACHABLE_ON_PHONE@=12beb608-5f22-43d1-afc0-f7aef355051d
+        @CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@=2138c5f5-ce1d-4e96-9b9b-c1ca6fc21510
+        @CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@=0d52c378-adeb-4c89-a977-1f6cc4a7e9e4
+        @CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@=959b33b3-4750-49fb-90a0-a76393a24b22
+        @CBS_REFERENCE_BY_CLIENT@=c1ef1230-a9f7-4593-bdc8-1e9a08d45968
+        @CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@=5e053da8-f8ac-4f4d-902f-dba756a312a5
+        @CBS_DOUBLE_REFERENCE@=e7fbe2c7-b9c4-4caa-83f3-3fc327a225c4
+        @CBS_REFERENCE_FAMILY_TESTING@=35de662a-63de-4dbc-92c4-2b08165406ab
+        @CBS_REFERENCE_SOCIAL_NETWORK_TESTING@=d195e749-fa4a-43e3-8ceb-a72f25fb2be4
+        @CBS_HIV_STATUS_KNOWN@=6c93ead4-d189-4476-a81d-1bef16bda6a4
+        @CBS_REFERENCE_NOT_PLANNED@=8919a43c-fdee-4861-9fd8-ff068d4d740c
+        @CBS_CONTACT_TESTED_FOR_HIV@=5ba1d72e-8a77-4ad3-824e-19006bbf05e7
+        @CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@=bd3649bd-8c55-4671-a9d1-d1515ca2877f
+        @CBS_CONTACT_HIV_RESULT@=c86a2bcc-638b-4696-a2ac-1a74a1781745
+        @CBS_CONTACT_TRACNET_NUMBER@=0fbbc915-2550-4de8-93a0-1661ad7b45b8
+        @CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@=7bfac55f-4ae4-4f4a-a597-5584e8be6020
+        @CBC_COMMENT@=e328e0b0-28c3-44c9-9b2a-5f16b5185e2c
+        @CBS_CONTACT_GROUP@=95b7a6fc-57b1-45b9-a595-467f6118b51e
+        @CBS_CONTACT_NOTIFIER@=e7664ff5-a8ab-47a2-bc29-4470636a5634
+        @CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=f7908667-e296-4be4-b41e-26bc4b5ceccb
+        @CBS_INDEX_NOTIFIED_CONTACT@=d12bec46-f525-41b2-99c6-bd51bda4046c
+        @CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=ab6fcd11-6531-4fcf-bfb2-a214b88c0d29
+        @CBS_CONTACT_INITIATED_ON_ART@=c1063a9d-515b-440a-af6a-89375cb44ca0
+        @CBS_NOTIFICATION_APPROACH@=80530ec0-b820-4fe8-9d12-9d1f6476b0bf
+        @CBS_CONTACT_CODE@=41c410a4-18a4-4221-98ad-1daf1b22de4d
+        @ELECTRONIC_RECORD_MATCHES_PAPER_FORM@=RWANDA:Electronic record matches paper form
+
+        <!-- Concept added by lcdamy -->
+        @CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV_SELECTION@=e052e8d1-6674-49d9-b9ae-f9a93e1e5e34
+        @REFUS_DU_TEST@=f799db35-8489-44f1-9572-c2eb0ba0d591
+        @CAS_CONNU@=bdb88bfa-c2f2-41bc-a1e2-91692a3afcee
+        @AUTRE_SPECIFIE@=1133af8b-c58d-44b3-9f3f-2803f05d18da
+        @CBS_ENROLLED_IN_CBS_ANSWER@=072b230b-66b7-4bd4-8aec-ba019f91637d
+        @CBS_ENROLLED_UPID@=a525a87f-b157-4599-b8e2-731896a9b7bc
+        @CBS_AUTRE_REASON_INDEX_CASE@=88caa2b9-2c65-4638-a4fb-6900987d3d22
+        @CBS_AUTRE_REASON_HIV@=6136d472-4fab-4107-8efb-b632928ad085
+
+    </macros>
+    <style>
+        .header {
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        th.tableHeader {
+            background-color: #009d8e;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .section {
+            border: 1px solid #009d8e;
+            padding: 2px;
+            text-align: left;
+            margin-bottom: 1em;
+        }
+
+        .sectionHeader {
+            background-color: #009d8e;
+            color: #FFFFFF;
+            display: block;
+            padding: 2px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        tr.spaceUnder>td {
+            padding-bottom: 1em;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        table.baseline-aligned td {
+            vertical-align: baseline;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            background-color: #D9D9D9;
+            font-size: 16px;
+        }
+
+        .error {
+            display: none;
+        }
+
+        .lables {
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .selectedCancerStagingKeys {
+            page-break-before: always;
+            border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+            border: 0px;
+        }
+
+        .mandotory-star {
+            color: #ff0000;
+        }
+    </style>
+    <script type="text/javascript">
+        if (jQuery) {
+
+            $j(document).ready(function () {
+
+                var url = new URL(window.location.href);
+
+                if (url.searchParams.get("mode") == "EDIT") {//Edit
+                    console.log("Mode Edit");
+                    $j('.other_reason_here').hide();
+                    hideByDefault('edit');
+                } else if (url.searchParams.get("formId")) {//Creation
+                    $j('.other_reason_here').hide();
+                    console.log("Mode formId");
+                } else {//View the form
+                    console.log("Mode view");
+                    $j('.other_reason_here').hide();
+                    hideByDefault('view');
+                    $j('#btnAdd').hide();
+                    $j('#btnDel').hide();
+                }
+
+                function hideByDefault(mode) {
+                    if (mode == 'edit') {
+                        if (getValue('relationship_with_contact1.value')) {
+                            $j("#1-toggleContainer").toggle(true);
+                            toggleInput(1, 'formation_sanitaire');
+                            toggleInput(1, 'testedForHIV');
+                            toggleInput(1, 'relationship_with_contact');
+                            toggleInput(1, 'cbs_reasons_contact_not_received');
+                            toggleInput(1, 'cbs_reasons_contact_not_tested');
+                            toggleInput(1, 'artStartOpts');
+                            toggleInput(1, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact2.value')) {
+                            $j("#2-toggleContainer").toggle(true);
+                            toggleInput(2, 'formation_sanitaire');
+                            toggleInput(2, 'testedForHIV');
+                            toggleInput(2, 'relationship_with_contact');
+                            toggleInput(2, 'cbs_reasons_contact_not_received');
+                            toggleInput(2, 'cbs_reasons_contact_not_tested');
+                            toggleInput(2, 'artStartOpts');
+                            toggleInput(2, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact3.value')) {
+                            $j("#3-toggleContainer").toggle(true);
+                            toggleInput(3, 'formation_sanitaire');
+                            toggleInput(3, 'testedForHIV');
+                            toggleInput(3, 'relationship_with_contact');
+                            toggleInput(3, 'cbs_reasons_contact_not_received');
+                            toggleInput(3, 'cbs_reasons_contact_not_tested');
+                            toggleInput(3, 'artStartOpts');
+                            toggleInput(3, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact4.value')) {
+                            $j("#4-toggleContainer").toggle(true);
+                            toggleInput(4, 'formation_sanitaire');
+                            toggleInput(4, 'testedForHIV');
+                            toggleInput(4, 'relationship_with_contact');
+                            toggleInput(4, 'cbs_reasons_contact_not_received');
+                            toggleInput(4, 'cbs_reasons_contact_not_tested');
+                            toggleInput(4, 'artStartOpts');
+                            toggleInput(4, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact5.value')) {
+                            $j("#5-toggleContainer").toggle(true);
+                            toggleInput(5, 'formation_sanitaire');
+                            toggleInput(5, 'testedForHIV');
+                            toggleInput(5, 'relationship_with_contact');
+                            toggleInput(5, 'cbs_reasons_contact_not_received');
+                            toggleInput(5, 'cbs_reasons_contact_not_tested');
+                            toggleInput(5, 'artStartOpts');
+                            toggleInput(5, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact6.value')) {
+                            $j("#6-toggleContainer").toggle(true);
+                            toggleInput(6, 'formation_sanitaire');
+                            toggleInput(6, 'testedForHIV');
+                            toggleInput(6, 'relationship_with_contact');
+                            toggleInput(6, 'cbs_reasons_contact_not_received');
+                            toggleInput(6, 'cbs_reasons_contact_not_tested');
+                            toggleInput(6, 'artStartOpts');
+                            toggleInput(6, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact7.value')) {
+                            $j("#7-toggleContainer").toggle(true);
+                            toggleInput(7, 'formation_sanitaire');
+                            toggleInput(7, 'testedForHIV');
+                            toggleInput(7, 'relationship_with_contact');
+                            toggleInput(7, 'cbs_reasons_contact_not_received');
+                            toggleInput(7, 'cbs_reasons_contact_not_tested');
+                            toggleInput(7, 'artStartOpts');
+                            toggleInput(7, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact8.value')) {
+                            $j("#8-toggleContainer").toggle(true);
+                            toggleInput(8, 'formation_sanitaire');
+                            toggleInput(8, 'testedForHIV');
+                            toggleInput(8, 'relationship_with_contact');
+                            toggleInput(8, 'cbs_reasons_contact_not_received');
+                            toggleInput(8, 'cbs_reasons_contact_not_tested');
+                            toggleInput(8, 'artStartOpts');
+                            toggleInput(8, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact9.value')) {
+                            $j("#9-toggleContainer").toggle(true);
+                            toggleInput(9, 'formation_sanitaire');
+                            toggleInput(9, 'testedForHIV');
+                            toggleInput(9, 'relationship_with_contact');
+                            toggleInput(9, 'cbs_reasons_contact_not_received');
+                            toggleInput(9, 'cbs_reasons_contact_not_tested');
+                            toggleInput(9, 'artStartOpts');
+                            toggleInput(9, 'upid_status');
+                        }
+                        if (getValue('relationship_with_contact10.value')) {
+                            $j("#10-toggleContainer").toggle(true);
+                            toggleInput(10, 'formation_sanitaire');
+                            toggleInput(10, 'testedForHIV');
+                            toggleInput(10, 'relationship_with_contact');
+                            toggleInput(10, 'cbs_reasons_contact_not_received');
+                            toggleInput(10, 'cbs_reasons_contact_not_tested');
+                            toggleInput(10, 'artStartOpts');
+                            toggleInput(10, 'upid_status');
+                        }
+                    } else {
+                        if ($j('#relationship_with_contact1').text().includes(".")) {
+                            $j("#1-toggleContainer").toggle(true);
+                            toggleInput(1, 'formation_sanitaire');
+                            toggleInput(1, 'testedForHIV');
+                            toggleInput(1, 'relationship_with_contact');
+                            toggleInput(1, 'cbs_reasons_contact_not_received');
+                            toggleInput(1, 'cbs_reasons_contact_not_tested');
+                            toggleInput(1, 'artStartOpts');
+                            toggleInput(1, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact2').text().includes(".")) {
+                            $j("#2-toggleContainer").toggle(true);
+                            toggleInput(2, 'formation_sanitaire');
+                            toggleInput(2, 'testedForHIV');
+                            toggleInput(2, 'relationship_with_contact');
+                            toggleInput(2, 'cbs_reasons_contact_not_received');
+                            toggleInput(2, 'cbs_reasons_contact_not_tested');
+                            toggleInput(2, 'artStartOpts');
+                            toggleInput(2, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact3').text().includes(".")) {
+                            $j("#3-toggleContainer").toggle(true);
+                            toggleInput(3, 'formation_sanitaire');
+                            toggleInput(3, 'testedForHIV');
+                            toggleInput(3, 'relationship_with_contact');
+                            toggleInput(3, 'cbs_reasons_contact_not_received');
+                            toggleInput(3, 'cbs_reasons_contact_not_tested');
+                            toggleInput(3, 'artStartOpts');
+                            toggleInput(3, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact4').text().includes(".")) {
+                            $j("#4-toggleContainer").toggle(true);
+                            toggleInput(4, 'formation_sanitaire');
+                            toggleInput(4, 'testedForHIV');
+                            toggleInput(4, 'relationship_with_contact');
+                            toggleInput(4, 'cbs_reasons_contact_not_received');
+                            toggleInput(4, 'cbs_reasons_contact_not_tested');
+                            toggleInput(4, 'artStartOpts');
+                            toggleInput(4, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact5').text().includes(".")) {
+                            $j("#5-toggleContainer").toggle(true);
+                            toggleInput(5, 'formation_sanitaire');
+                            toggleInput(5, 'testedForHIV');
+                            toggleInput(5, 'relationship_with_contact');
+                            toggleInput(5, 'cbs_reasons_contact_not_received');
+                            toggleInput(5, 'cbs_reasons_contact_not_tested');
+                            toggleInput(5, 'artStartOpts');
+                            toggleInput(5, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact6').text().includes(".")) {
+                            $j("#6-toggleContainer").toggle(true);
+                            toggleInput(6, 'formation_sanitaire');
+                            toggleInput(6, 'testedForHIV');
+                            toggleInput(6, 'relationship_with_contact');
+                            toggleInput(6, 'cbs_reasons_contact_not_received');
+                            toggleInput(6, 'cbs_reasons_contact_not_tested');
+                            toggleInput(6, 'artStartOpts');
+                            toggleInput(6, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact7').text().includes(".")) {
+                            $j("#7-toggleContainer").toggle(true);
+                            toggleInput(7, 'formation_sanitaire');
+                            toggleInput(7, 'testedForHIV');
+                            toggleInput(7, 'relationship_with_contact');
+                            toggleInput(7, 'cbs_reasons_contact_not_received');
+                            toggleInput(7, 'cbs_reasons_contact_not_tested');
+                            toggleInput(7, 'artStartOpts');
+                            toggleInput(7, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact8').text().includes(".")) {
+                            $j("#8-toggleContainer").toggle(true);
+                            toggleInput(8, 'formation_sanitaire');
+                            toggleInput(8, 'testedForHIV');
+                            toggleInput(8, 'relationship_with_contact');
+                            toggleInput(8, 'cbs_reasons_contact_not_received');
+                            toggleInput(8, 'cbs_reasons_contact_not_tested');
+                            toggleInput(8, 'artStartOpts');
+                            toggleInput(8, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact9').text().includes(".")) {
+                            $j("#9-toggleContainer").toggle(true);
+                            toggleInput(9, 'formation_sanitaire');
+                            toggleInput(9, 'testedForHIV');
+                            toggleInput(9, 'relationship_with_contact');
+                            toggleInput(9, 'cbs_reasons_contact_not_received');
+                            toggleInput(9, 'cbs_reasons_contact_not_tested');
+                            toggleInput(9, 'artStartOpts');
+                            toggleInput(9, 'upid_status');
+                        }
+                        if ($j('#relationship_with_contact10').text().includes(".")) {
+                            $j("#10-toggleContainer").toggle(true);
+                            toggleInput(10, 'formation_sanitaire');
+                            toggleInput(10, 'testedForHIV');
+                            toggleInput(10, 'relationship_with_contact');
+                            toggleInput(10, 'cbs_reasons_contact_not_received');
+                            toggleInput(10, 'cbs_reasons_contact_not_tested');
+                            toggleInput(10, 'artStartOpts');
+                            toggleInput(10, 'upid_status');
+                        }
+                    }
+                }
+
+                var my_n = 0;
+
+                $j('#btnAdd').click(function () {
+                    my_n++;
+                    $j('#btnDel').attr('disabled', false);
+                    if (my_n == 10) {
+                        $j('#btnAdd').attr('disabled', true);
+                        return;
+                    }
+                    $j("#" + my_n + "-toggleContainer").toggle(true);
+                });
+
+                $j('#btnDel').click(function () {
+                    if (my_n == 0) {
+                        $j('#btnDel').attr('disabled', 'disabled');
+                        return;
+                    }
+                    $j("#" + my_n + "-toggleContainer").toggle(false);
+                    my_n--;
+                });
+
+                $j('#btnDel').attr('disabled', 'disabled');
+
+
+                $j('#formation_sanitaire1').click(function () {
+                    toggleInput(1, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire2').click(function () {
+                    toggleInput(2, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire3').click(function () {
+                    toggleInput(3, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire4').click(function () {
+                    toggleInput(4, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire5').click(function () {
+                    toggleInput(5, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire6').click(function () {
+                    toggleInput(6, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire7').click(function () {
+                    toggleInput(7, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire8').click(function () {
+                    toggleInput(8, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire9').click(function () {
+                    toggleInput(9, 'formation_sanitaire');
+                });
+
+                $j('#formation_sanitaire10').click(function () {
+                    toggleInput(10, 'formation_sanitaire');
+                });
+
+
+
+                $j('#testedForHIV1').click(function () {
+                    toggleInput(1, 'testedForHIV');
+                });
+
+                $j('#testedForHIV2').click(function () {
+                    toggleInput(2, 'testedForHIV');
+                });
+
+                $j('#testedForHIV3').click(function () {
+                    toggleInput(3, 'testedForHIV');
+                });
+
+                $j('#testedForHIV4').click(function () {
+                    toggleInput(4, 'testedForHIV');
+                });
+
+                $j('#testedForHIV5').click(function () {
+                    toggleInput(5, 'testedForHIV');
+                });
+
+                $j('#testedForHIV6').click(function () {
+                    toggleInput(6, 'testedForHIV');
+                });
+
+                $j('#testedForHIV7').click(function () {
+                    toggleInput(7, 'testedForHIV');
+                });
+
+                $j('#testedForHIV8').click(function () {
+                    toggleInput(8, 'testedForHIV');
+                });
+
+                $j('#testedForHIV9').click(function () {
+                    toggleInput(9, 'testedForHIV');
+                });
+
+                $j('#testedForHIV10').click(function () {
+                    toggleInput(10, 'testedForHIV');
+                });
+
+
+
+
+                $j('#relationship_with_contact1').change(function () {
+                    toggleInput(1, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact2').change(function () {
+                    toggleInput(2, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact3').change(function () {
+                    toggleInput(3, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact4').change(function () {
+                    toggleInput(4, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact5').change(function () {
+                    toggleInput(5, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact6').change(function () {
+                    toggleInput(6, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact7').change(function () {
+                    toggleInput(7, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact8').change(function () {
+                    toggleInput(8, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact9').change(function () {
+                    toggleInput(9, 'relationship_with_contact');
+                });
+
+                $j('#relationship_with_contact10').change(function () {
+                    toggleInput(10, 'relationship_with_contact');
+                });
+
+
+
+
+                $j('#cbs_reasons_contact_not_received1').change(function () {
+                    toggleInput(1, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received2').change(function () {
+                    toggleInput(2, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received3').change(function () {
+                    toggleInput(3, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received4').change(function () {
+                    toggleInput(4, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received5').change(function () {
+                    toggleInput(5, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received6').change(function () {
+                    toggleInput(6, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received7').change(function () {
+                    toggleInput(7, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received8').change(function () {
+                    toggleInput(8, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received9').change(function () {
+                    toggleInput(9, 'cbs_reasons_contact_not_received');
+                });
+
+                $j('#cbs_reasons_contact_not_received10').change(function () {
+                    toggleInput(10, 'cbs_reasons_contact_not_received');
+                });
+
+
+
+
+                $j('#cbs_reasons_contact_not_tested1').change(function () {
+                    toggleInput(1, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested2').change(function () {
+                    toggleInput(2, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested3').change(function () {
+                    toggleInput(3, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested4').change(function () {
+                    toggleInput(4, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested5').change(function () {
+                    toggleInput(5, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested6').change(function () {
+                    toggleInput(6, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested7').change(function () {
+                    toggleInput(7, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested8').change(function () {
+                    toggleInput(8, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested9').change(function () {
+                    toggleInput(9, 'cbs_reasons_contact_not_tested');
+                });
+
+                $j('#cbs_reasons_contact_not_tested10').change(function () {
+                    toggleInput(10, 'cbs_reasons_contact_not_tested');
+                });
+
+
+
+
+                $j('#artStartOpts1').click(function () {
+                    toggleInput(1, 'artStartOpts');
+                });
+
+                $j('#artStartOpts2').click(function () {
+                    toggleInput(2, 'artStartOpts');
+                });
+
+                $j('#artStartOpts3').click(function () {
+                    toggleInput(3, 'artStartOpts');
+                });
+
+                $j('#artStartOpts4').click(function () {
+                    toggleInput(4, 'artStartOpts');
+                });
+
+                $j('#artStartOpts5').click(function () {
+                    toggleInput(5, 'artStartOpts');
+                });
+
+                $j('#artStartOpts6').click(function () {
+                    toggleInput(6, 'artStartOpts');
+                });
+
+                $j('#artStartOpts7').click(function () {
+                    toggleInput(7, 'artStartOpts');
+                });
+
+                $j('#artStartOpts8').click(function () {
+                    toggleInput(8, 'artStartOpts');
+                });
+
+                $j('#artStartOpts9').click(function () {
+                    toggleInput(9, 'artStartOpts');
+                });
+
+                $j('#artStartOpts10').click(function () {
+                    toggleInput(10, 'artStartOpts');
+                });
+
+
+
+
+                $j('#upid_status1').click(function () {
+                    toggleInput(1, 'upid_status');
+                });
+
+                $j('#upid_status2').click(function () {
+                    toggleInput(2, 'upid_status');
+                });
+
+                $j('#upid_status3').click(function () {
+                    toggleInput(3, 'upid_status');
+                });
+
+                $j('#upid_status4').click(function () {
+                    toggleInput(4, 'upid_status');
+                });
+
+                $j('#upid_status5').click(function () {
+                    toggleInput(5, 'upid_status');
+                });
+
+                $j('#upid_status6').click(function () {
+                    toggleInput(6, 'upid_status');
+                });
+
+                $j('#upid_status7').click(function () {
+                    toggleInput(7, 'upid_status');
+                });
+
+                $j('#upid_status8').click(function () {
+                    toggleInput(8, 'upid_status');
+                });
+
+                $j('#upid_status9').click(function () {
+                    toggleInput(9, 'upid_status');
+                });
+
+                $j('#upid_status10').click(function () {
+                    toggleInput(10, 'upid_status');
+                });
+
+
+                function toggleInput(id, mode) {
+                    switch (mode) {
+                        case 'formation_sanitaire':
+                            if (!getValue('formation_sanitaire' + id + '.value')) {
+                                $j('#si_n_raison' + id).hide();
+                                $j('#si_o_qui' + id).hide();
+                                $j('#si_o_moyen' + id).hide();
+                                return;
+                            }
+                            if (getValue('formation_sanitaire' + id + '.value') == "1065") {
+                                $j('#si_n_raison' + id).hide();
+                                $j('#si_o_qui' + id).show();
+                                $j('#si_o_moyen' + id).show();
+                            } else {
+                                $j('#si_n_raison' + id).show();
+                                $j('#si_o_qui' + id).hide();
+                                $j('#si_o_moyen' + id).hide();
+                            }
+                            break;
+                        case 'testedForHIV':
+                            if (!getValue('testedForHIV' + id + '.value')) {
+                                $j('#si_n_hiv' + id).hide();
+                                $j('#si_o_hiv' + id).hide();
+                                return;
+                            }
+                            if (getValue('testedForHIV' + id + '.value') == "1065") {
+                                $j('#si_n_hiv' + id).hide();
+                                $j('#si_o_hiv' + id).show();
+                            } else {
+                                $j('#si_n_hiv' + id).show();
+                                $j('#si_o_hiv' + id).hide();
+                            }
+                            break;
+                        case 'relationship_with_contact':
+                            if (!getValue('relationship_with_contact' + id + '.value')) {
+                                $j('#other_reason_here_' + id).hide();
+                                return;
+                            }
+                            if (getValue('relationship_with_contact' + id + '.value') == "105623") {
+                                $j('#other_reason_here_' + id).show();
+                            } else {
+                                $j('#other_reason_here_' + id).hide();
+                            }
+                            break;
+                        case 'cbs_reasons_contact_not_received':
+                            if (!getValue('cbs_reasons_contact_not_received' + id + '.value')) {
+                                $j('#other_reason_here_si_n_raison' + id).hide();
+                                return;
+                            }
+                            if (getValue('cbs_reasons_contact_not_received' + id + '.value') == "105656") {
+                                $j('#other_reason_here_si_n_raison' + id).show();
+                            } else {
+                                $j('#other_reason_here_si_n_raison' + id).hide();
+                            }
+                            break;
+                        case 'cbs_reasons_contact_not_tested':
+                            if (!getValue('cbs_reasons_contact_not_tested' + id + '.value')) {
+                                $j('#other_reason_here_si_n_hiv' + id).hide();
+                                return;
+                            }
+                            if (getValue('cbs_reasons_contact_not_tested' + id + '.value') == "106804") {
+                                $j('#other_reason_here_si_n_hiv' + id).show();
+                            } else {
+                                $j('#other_reason_here_si_n_hiv' + id).hide();
+                            }
+                            break;
+                        case 'artStartOpts':
+                            if (!getValue('artStartOpts' + id + '.value')) {
+                                $j('#tracenet_input' + id).hide();
+                                return;
+                            }
+                            if (getValue('artStartOpts' + id + '.value') == "1065") {
+                                $j('#tracenet_input' + id).show();
+                            } else {
+                                $j('#tracenet_input' + id).hide();
+                            }
+                            break;
+                        case 'upid_status':
+                            if (!getValue('upid_status' + id + '.value')) {
+                                $j('#cbs_enrolled_upid' + id).hide();
+                                return;
+                            }
+                            if (getValue('upid_status' + id + '.value') == "1065") {
+                                $j('#cbs_enrolled_upid' + id).show();
+                            } else {
+                                $j('#cbs_enrolled_upid' + id).hide();
+                            }
+                            break;
+                        default:
+                            console.log(mode);
+                    }
+                }
+
+                //If  submission does not work redirect with an error message
+                beforeSubmit.push(function () {
+
+                    var date = getValue('encounterDate.value');
+                    var provider = getValue('encounterProvider.value');
+                    var location = getValue('encounterLocation.value');
+                    var enrollment = getValue('enrollDate.value');
+
+                    console.log([date, provider, location, enrollment]);
+                    if (!date || date == "") {
+                        getField('encounterDate.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterDate.error').html('This field is required').hide();
+                    }
+
+                    if (!provider || provider == "") {
+                        getField('encounterProvider.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterProvider.error').html('This field is required').hide();
+                    }
+
+                    if (!location || location == "") {
+                        getField('encounterLocation.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterLocation.error').html('This field is required').hide();
+                    }
+
+                    if (!enrollment || enrollment == "") {
+                        getField('enrollDate.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('enrollDate.error').html('This field is required').hide();
+                    }
+
+                    if (my_n) {
+                        var relationship_with_contact1 = getValue('relationship_with_contact1.value');
+                        if (!relationship_with_contact1 || relationship_with_contact1 == "") {
+                            getField('relationship_with_contact1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('relationship_with_contact1.error').html('This field is required').hide();
+                        }
+
+                        var invitation_fosa1 = getValue('invitation_fosa1.value');
+                        if (!invitation_fosa1 || invitation_fosa1 == "") {
+                            getField('invitation_fosa1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('invitation_fosa1.error').html('This field is required').hide();
+                        }
+
+                        var testedForHIV1 = getValue('testedForHIV1.value');
+                        if (!testedForHIV1 || testedForHIV1 == "") {
+                            getField('testedForHIV1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('testedForHIV1.error').html('This field is required').hide();
+                        }
+
+
+                        var artStartOpts1 = getValue('artStartOpts1.value');
+                        if (!artStartOpts1 || artStartOpts1 == "") {
+                            getField('artStartOpts1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('artStartOpts1.error').html('This field is required').hide();
+                        }
+
+                        var contact_tested1 = getValue('contact_tested1.value');
+                        if (!contact_tested1 || contact_tested1 == "") {
+                            getField('contact_tested1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('contact_tested1.error').html('This field is required').hide();
+                        }
+                    }
+
+                    return true;
+                });
+
+            });
+        }
+
+    </script>
+    <!--===============================   Section 1 =======================================  -->
+    <section headerLabel="1. Encounter Details">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">Date:</td>
+                <td>
+                    <encounterDate id="encounterDate" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>
+                    <encounterLocation default="486" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Provider:</td>
+                <td>
+                    <encounterProvider id="encounterProvider" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Date d'enrôlement dans le CBS (enrollment date in CBS):</td>
+                <td>
+                    <obs conceptId="$@ENROLLMENT_DATE@" allowFutureDates="true" required='true' id='enrollDate' />
+                </td>
+            </tr>
+            <tr>
+                <td>№ d'Identifiant Unique (UPID): </td>
+                <td>
+                    <lookup class="value"
+                        complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end " />
+                </td>
+            </tr>
+            <tr>
+                <td>Date de début des ARVs (Date of ART initiation):</td>
+                <td>
+                    <obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED@" allowFutureDates="true" />
+                </td>
+            </tr>
+        </table>
+    </section><br></br>
+    <!--===============================   Section 2 =======================================  -->
+    <section headerLabel="Information sur le Test de 'Recency Testing' (Recency Testing Information)">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">
+                    Date de collecte de l'échantillon (Date of sample collection):
+                </td>
+                <td>
+                    <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" allowFutureDates="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Le site où l'échantillon a été référé (Site where sample was referred):
+                </td>
+                <td>
+                    <obs conceptId="$@CBS_SAMPLE_REFERRAL_SITE@" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date de réception du Résultat dans le service ARV (Date of result reception at ARV Service):
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Résultat (R/LT) (Result R/LT):
+                </td>
+                <td>
+                    <obs conceptId="$@RECENCY_ASSAY_RESULTS@" conceptAnswerIds="$@RECENT@, $@LONG_TERM@,@INVALID@"
+                        answerLabels="R, LT, Invalid" style="radio" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date d'annonce du résultat au Cas Index (Date result was disclosed to Index Case):
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@" allowFutureDates="true" />
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br></br>
+    <!--===============================   Section 3 =======================================  -->
+    <section headerLabel="Nombre de Contacts (Number of Contacts)">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">Membres de la famille (Family members):
+                </td>
+                <td>
+                    <obs conceptId="$@NUMBER_OF_FAMILY_MEMBERS@" id="numFamily" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Partenaires sexuels reçus durant les 12 derniers mois (Sexual Partners in the last 12 months):
+                </td>
+                <td>
+                    <obs conceptId="$@NUMBER_OF_SEXUAL_PARTNERS@" id="numSexPartners" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Personnes de réseau social (Social Network members):
+                </td>
+                <td>
+                    <obs conceptId="$@SOCIAL_NETWORK_MEMBERS@" id="numSocialNetMembers" />
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br></br>
+    <!--===============================   CONTACTS =======================================  -->
+    <div id="contactsList">
+        <div class="contactInfo">
+            <obsgroup groupingConceptId="$@CBS_CONTACT_GROUP@">
+                <repeat>
+                    <template>
+                        <div id="{n}-toggleContainer" style="display:none;">
+                            <header>
+                                <h2> Contact {n}</h2>
+                            </header>
+                            <!--===============================  Contact 1 sub-section 1 =======================================  -->
+                            <section headerLabel="Information sur le contact {n} (Information on Contacts)">
+                                <table cellspacing="0" cellpadding="6" width="100%">
+                                    <tr>
+                                        <th colspan="2">Nombre de Contacts (Number of Contacts) (information bellow are
+                                            reported
+                                            for each
+                                            sexual partner)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Code du Contact (Code of the Contact):
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_CODE@" conceptLabel="" id="1{n}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AGE:
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_AGE@" conceptLabel="" id="2{n}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sex:
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_GENDER@" conceptLabel="" id="3{n}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Relation du Contact avec le Cas Index (Relation of the
+                                            Contact and Index case):
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@"
+                                                    conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@"
+                                                    answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "
+                                                    id="relationship_with_contact{n}" labelText="" />
+                                                <span class="mandotory-star">*</span>
+                                            </div>
+                                            <div id="other_reason_here_{n}" class="other_reason_here">
+                                                Si autre specifier ici (If other specify here)
+                                                <obs conceptId="$@CBS_AUTRE_REASON_INDEX_CASE@" conceptLabel=""
+                                                    id="4{n}" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_HIV_STATUS@"
+                                                conceptAnswerIds="$@NEGATIVE@, $@POSITIVE@, $@UNKNOWN@"
+                                                answerLabels="N, P, Inconnu" style="radio" name="radioHs" id="5{n}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@NO@, $@YES@"
+                                                answerLabels="N, Y" style="radio" name="radioRv" id="6{n}" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type de Reference Plannifiee (A,B,C,D,E,F,G) (Planned type of reference)
+                                        </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_PLANNED_REFERENCE_TYPE@"
+                                                conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@"
+                                                answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference),D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned there is risk of violence)"
+                                                id="7{n}" labelText="" />
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                                <!--===============================  Contact 1 sub-section 2 =======================================  -->
+
+                                <table cellspacing="0" cellpadding="6" width="100%">
+                                    <tr>
+                                        <td colspan="2">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">
+                                            Resultats de la notification de Contacts (Outcome of Contact notification
+                                            process):Duplicate according to number of contact
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td width="50%">Contact invite a la FOSA (Contact successfully invited):</td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_SUCCESSFULLY_INVITED@"
+                                                conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y" style="radio"
+                                                id="invitation_fosa{n}" labelText="" />
+                                            <span class="mandotory-star">*</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact recu a la formation sanitaire? (Contact recieved at health
+                                            facility?) </td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@"
+                                                conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y" style="radio"
+                                                class="recievedAtFacility" id="formation_sanitaire{n}" labelText="" />
+                                            <br />
+                                            <div id="si_n_raison{n}" class="other_reason_here">
+                                                <div>Si "N", raison (If "N", reason)</div>
+                                                <div>
+                                                    <obs conceptId="$@CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@"
+                                                        conceptAnserIds="$@CBC_UNSUCCESSFUL_CLIENT_REFERRAL@, $@CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@ $@CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@, $@CONTACT_REFUSED_NOTIFICATION@, $@CBS_CONTACT_MOVED_OUT_OF_AREA@, $@CBS_CONTACT_NOT_REACHABLE_ON_PHONE@, $@CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@"
+                                                        answerLabels="1. Contacté mais n’est pas venu à la FOSA (Unsuccessful client referral), 2. Pas d’autorisation du Cas Index pour contacter son partenaire après 30 jours (Index client did not give permission to contact partner after 30 days), 3. Information incomplète et/ou incorrecte sur le Contact(Contact adress information incomplete/incorrect), 4. Refus du Contact d’être notifié (Contact refused notification), 5. Le Contact a migré (Contact has moved out of the area), 6. Trois tentatives d’appels téléphoniques sans succès(Unable to reach partner after 3 phone call attempts),7. Autres (Others)"
+                                                        class="noLinkOptions" id="cbs_reasons_contact_not_received{n}"
+                                                        labelText="" />
+                                                </div>
+                                                <div id="other_reason_here_si_n_raison{n}" class="other_reason_here">
+                                                    Si autre specifier ici (If other specify here)
+                                                    <br />
+                                                    <obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@"
+                                                        conceptLabel="" id="8{n}" />
+                                                </div>
+                                            </div>
+                                            <div id="si_o_qui{n}" class="other_reason_here">
+                                                <div>
+                                                    <div>Si "O", Qui l'a notifie (A,B,C) (If "Y", who notified the index
+                                                        case)
+                                                    </div>
+                                                    <obs conceptId="$@CBS_CONTACT_NOTIFIER@"
+                                                        conceptAnserIds="$@CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@, $@CBS_INDEX_NOTIFIED_CONTACT@ $@CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@"
+                                                        answerLabels="A. Le cas index  (the index case), B. Le prestataire de soins (the health care provider),C. Le cas index et le prestataire de soins (the index case and the health care provider)"
+                                                        id="9{n}" labelText="" />
+                                                </div>
+                                            </div>
+                                            <div id="si_o_moyen{n}" class="other_reason_here">
+                                                <div>
+                                                    <div>Si "O", Moyen de Notification (A,B,C,D,E,F,G) (If "Y",
+                                                        notification
+                                                        approach)
+                                                    </div>
+                                                    <!-- lcdamy -->
+                                                    <obs conceptId="$@CBS_NOTIFICATION_APPROACH@"
+                                                        conceptAnswerIds="$@CBS_REFERENCE_BY_CLIENT@, $@CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@, $@CBS_DOUBLE_REFERENCE@, $@CBS_REFERENCE_FAMILY_TESTING@, $@CBS_REFERENCE_SOCIAL_NETWORK_TESTING@, $@CBS_HIV_STATUS_KNOWN@, $@CBS_REFERENCE_NOT_PLANNED@"
+                                                        answerLabels="A. Référence par le Client (Reference by the client),B. Référence par le Prestataire (Reference by the health care provider),C. Double Référence (Double reference), D. Test de Famille (Family testing),E. Test dans le Réseau Social (Social Network testing),F. Statut VIH du contact est déjà connu  (HIV status is already known),G. Pas de référence plannifié il y a risque de violence (Reference not planned-there is risk of violence)"
+                                                        id="10{n}" labelText="" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact testé pour le VIH? (Was the Contact tested for HIV?)</td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_TESTED_FOR_HIV@"
+                                                conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y"
+                                                class="testedForHIV" id="testedForHIV{n}" style="radio" />
+                                            <span class="mandotory-star">*</span>
+                                            <br />
+                                            <div id="si_n_hiv{n}" class="other_reason_here">
+                                                <div> Si "N", Raison (If "N", reason) </div>
+                                                <div>
+                                                    <obs conceptId="$@CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV_SELECTION@"
+                                                        conceptLabel="$@AUTRE_SPECIFIE@, $@CAS_CONNU@, $@REFUS_DU_TEST@"
+                                                        answerLabels="Autre specifie, Cas connu, Refus du test"
+                                                        id="cbs_reasons_contact_not_tested{n}" labelText="" />
+                                                    <div id="other_reason_here_si_n_hiv{n}" class="other_reason_here">
+                                                        Si autre specifier ici (If other specify here)
+                                                        <br />
+                                                        <obs conceptId="$@CBS_AUTRE_REASON_HIV@" conceptLabel=""
+                                                            id="11{n}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="si_o_hiv{n}" class="other_reason_here">
+                                                <div>
+                                                    <obs conceptId="$@CBS_CONTACT_HIV_RESULT@"
+                                                        conceptAnswerIds="$@NEGATIVE@, $@POSITIVE@"
+                                                        answerLabels="N ,P, Inconnu" style="radio" id="12{n}"
+                                                        labelText='Si "O", Résultat N/P (If Y, result)' />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="artInitiation">
+                                        <td>Si le Contact est testé VIH Positif (If contact is tested HIV positive)</td>
+                                        <td>
+                                            <obs conceptId="$@CBS_CONTACT_INITIATED_ON_ART@"
+                                                conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y"
+                                                id="artStartOpts{n}" style="radio" labelText="ART INITIATION:" />
+                                            <span class="mandotory-star">*</span>
+                                            <div id="tracenet_input{n}" class="other_reason_here">
+                                                <obs conceptId="$@CBS_CONTACT_TRACNET_NUMBER@" labelText="TracNet N°"
+                                                    id="13{n}" conceptLabel="" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Le contact est-il inscrit dans CBS? (Is the contact enrolled in CBS?)</td>
+                                        <td>
+                                            <div>
+                                                <obs conceptId="$@CBS_ENROLLED_IN_CBS_ANSWER@"
+                                                    conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y" style="radio"
+                                                    id="upid_status{n}" />
+                                            </div>
+                                            <div id="cbs_enrolled_upid{n}" class="other_reason_here">
+                                                <div>
+                                                    <obs conceptId="$@CBS_ENROLLED_UPID@"
+                                                        labelText='Si "Y" Son UPID (If "Y" his/her UPID)' id="14{n}"
+                                                        conceptLabel="" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Si Contact "Non testé", a-t-il recu le HIV self test kit? (If contact not
+                                            tested,
+                                            did he/she receive HIV self-testing kit?)</td>
+                                        <td>
+                                            <obs conceptId="$@CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@"
+                                                conceptAnswerIds="$@NO@, $@YES@" answerLabels="N, Y"
+                                                id="contact_tested{n}" style="radio" />
+                                            <span class="mandotory-star">*</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Observation (Comments)</td>
+                                        <td>
+                                            <obs conceptId="$@CBC_COMMENT@" conceptLabel="" id="15{n}" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </section>
+                            <br /> <br /> <br />
+                        </div>
+                    </template>
+                    <render n="1" concept="Diagnosis" />
+                    <render n="2" concept="Diagnosis" />
+                    <render n="3" concept="Diagnosis" />
+                    <render n="4" concept="Diagnosis" />
+                    <render n="5" concept="Diagnosis" />
+                    <render n="6" concept="Diagnosis" />
+                    <render n="7" concept="Diagnosis" />
+                    <render n="8" concept="Diagnosis" />
+                    <render n="9" concept="Diagnosis" />
+                    <render n="10" concept="Diagnosis" />
+                </repeat>
+            </obsgroup>
+        </div>
+    </div>
+    <br />
+
+
+    <div>
+        <button type="button" id="btnAdd">Click to Add information on more contacts</button>
+        <button type="button" id="btnDel">Delete information on contact</button>
+    </div>
+    <br />
+    <submit />
+
+</htmlform>
