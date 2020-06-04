@@ -89,7 +89,7 @@
 
         @PREGNANCY_CHECK@=be075303-3a46-4b89-8b8c-912acb2a75e7
         @OPD_ARV_IPD_TB_SELECTION@=1b79cdbb-82ba-4228-ab11-b4e2363a86f0
-        @OPD_TEST@=359269a6-a276-4219-8197-f27c1d5f5cd8
+        @OPD_TEST@=9e5e7ffc-6eb8-4d0f-a1a8-319eed6399fb
         @ARV_TEST@=acd19161-816a-40a1-beac-a18bfc861b58
         @IPD_TEST@=58ee5fc5-2af0-440b-b5f5-d54852fe66ea
         @TB_TEST@=48c3029e-7295-4d18-92c3-9872a3286108
@@ -100,6 +100,20 @@
         @OTHER_SPECIFY_PIT@=e5d5be46-28be-4ec8-a4a8-2ae10c0c039c
         @REASON_LIKEND_TO_FACILITY@=6b45806a-a6cf-4d95-b165-031569788fe8
         @RESIDENCY_TYPE_CORRECTION@=05544cd8-ead3-472a-98cd-02094d1e7c27
+
+        <!-- Concept added by lcdamy -->
+        @WHO_STAGE@=3cdb3b02-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGE_1@=3cd7ee16-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGE_2@=3cd7ef9c-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGE_3@=3cd7f118-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGE_4@=3cd7f294-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGING_DATE@=91b0d6ea-f0fa-461c-9de3-a3018e803ea0
+        @CD4@=3ceda710-26fe-102b-80cb-0017a47871b2
+        @DATE_OF_RETURNED_RESULT@=c19867c0-fec9-404c-bf25-6cf7a8c54eb7
+        @RECENCY_VIRAL_LOAD_RESULT@=aae8d7fe-8bbc-4d2e-926c-0e28b4d0e046
+        @RECENCY_COLLECTION_DATE@=fa87bb43-ebcc-4919-96f8-c5013ce1bbca
+        @OI_NAME@=a1956646-837c-4421-8a33-b294b62aee97
+        @OI_DATE@=6781dba8-422d-455b-a26c-41a99c744444
 
         paperFormId = (Fill this in)
         headerColor =#009d8e
@@ -286,7 +300,7 @@
                                 $j('#if_pit_other').hide();
                                 return;
                             }
-                            if (getValue('if_pit_other_selected.value') == "106800") {
+                            if (getValue('if_pit_other_selected.value') == "111209") {
                                 $j('#if_pit_other').show();
                             } else {
                                 $j('#if_pit_other').hide();
@@ -331,12 +345,15 @@
                         case 'treatLink':
                             if (!getValue('treatLink.value')) {
                                 $j('#noTreatLink').hide();
+                                $j('#yesTreatLink').hide();
                                 return;
                             }
                             if (getValue('treatLink.value') == "1066") {
                                 $j('#noTreatLink').show();
+                                $j('#yesTreatLink').hide();
                             } else {
                                 $j('#noTreatLink').hide();
+                                $j('#yesTreatLink').show();
                             }
                             break;
                         case 'yeswhereTreatLink':
@@ -406,7 +423,6 @@
                     var been_commercial_sex_worker = getValue('been_commercial_sex_worker.value');
 
                     var Testing_facility_name = getValue('Testing_facility_name.value');
-                    var Date_of_HIV_positive_results_confirmation = getValue('Date_of_HIV_positive_results_confirmation.value');
                     var Testing_Clinic = getValue('Testing_Clinic.value');
                     var Recency_Assay_test_done = getValue('Recency_Assay_test_done.value');
                     var Recency_assay_results = getValue('Recency_assay_results.value');
@@ -414,9 +430,8 @@
                     var treatLink = getValue('treatLink.value');
                     var tbMeds = getValue('tbMeds.value');
                     var stable = getValue('stable.value');
-                    var Last_Pharmacy_pick = getValue('Last_Pharmacy_pick.value');
 
-                    console.log([date, location, provider, ispatientenrolled, patientenrolleddate, indexType, residence_type, employmentStatus, occupation, pregnancyStatus, how_relation_sex, lifetime_sexual, sexual_Partner_12, sexual_Partner_3, Sex_with_male, Sex_with_female, Sex_with_hiv_person, Sex_with_commercial_sex_worker, Sex_with_multiple_person, been_commercial_sex_worker, Testing_facility_name, Date_of_HIV_positive_results_confirmation, Testing_Clinic, Recency_Assay_test_done, Recency_assay_results, Counselled_on_Linkage, treatLink, tbMeds, stable, Last_Pharmacy_pick]);
+                    console.log([date, location, provider, ispatientenrolled, patientenrolleddate, indexType, residence_type, employmentStatus, occupation, pregnancyStatus, how_relation_sex, lifetime_sexual, sexual_Partner_12, sexual_Partner_3, Sex_with_male, Sex_with_female, Sex_with_hiv_person, Sex_with_commercial_sex_worker, Sex_with_multiple_person, been_commercial_sex_worker, Testing_facility_name, Testing_Clinic, Recency_Assay_test_done, Recency_assay_results, Counselled_on_Linkage, treatLink, tbMeds, stable]);
 
                     if (!date == true || date == "") {
                         getField('encounterDate.error').html('This field is required').show();
@@ -497,7 +512,7 @@
             <tr>
                 <td width="50%">Date:</td>
                 <td>
-                    <encounterDate default="today" id="encounterDate" /> <span class="mandotory-star">*</span>
+                    <encounterDate id="encounterDate" /> <span class="mandotory-star">*</span>
                 </td>
             </tr>
             <tr>
@@ -516,20 +531,13 @@
     </section>
     <table cellspacing="0" cellpadding="6" width="100%">
         <tr>
-            <th colspan="3" style="text-align:center">INDEX TESTING, PARTNER NOTIFICATION, RECENCY TESTING</th>
+            <th colspan="2" style="text-align:center">INDEX TESTING, PARTNER NOTIFICATION, RECENCY TESTING</th>
         </tr>
         <tr>
-            <td>Patient enrolled in CBS Program : &#160;&#160;&#160;
-                <obs conceptId="$@ENROLLED_IN_CBS@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N"
-                    id="ispatientenrolled" style="radio" /> <br /> <br />
-                Contact Code &#160;&#160;&#160;
-                <obs conceptId="$@CBS_CONTACT_CODE@" /><br /> <br />
+            <td width="50%">
                 UPID &#160;&#160;&#160;
                 <lookup class="value"
                     complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end " />
-            </td>
-            <td>Date: &#160;&#160;&#160;
-                <encounterDate default="today" id="patientenrolleddate" />
             </td>
             <td><strong> Index case type (Type de cas index):</strong>
                 <div>
@@ -546,40 +554,69 @@
                 </div>
             </td>
         </tr>
-    </table> <br /><br />
+    </table> <br />
     <!--===============================   Section 2 =======================================  -->
     <section headerLabel="2. Demographic Information">
         <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
             <tr>
-                <td>Current residence type <i>(Type d'adresse)</i>:
-                    <obs conceptId="$@RESIDENCY_TYPE@"
-                        answerConceptIds="$@RESIDENCY_TYPE_SHELTER@, $@RESIDENCY_TYPE_RESIDENTIAL@, $@RESIDENCY_TYPE_HOMELESS@, $@RESIDENCY_TYPE_TEMPORARY@, $@RESIDENCY_TYPE_CORRECTION@"
-                        answerLabels="Shelter (Refuge), Residential (Residentielle), Homeless (Sans abri), Temporary (Temporaire), Correctional (Maison de detention)"
-                        id="residence_type" />
+                <td>
+                    <div>
+                        <strong> Date od Birth <i>(dd/mm/yyy)</i> :</strong>
+                        <lookup class="value" expression="patient.birthdate" />
+                    </div>
+                    <div>
+                        <strong> Gender :</strong>
+                        <lookup class="value" expression="patient.gender" />
+                    </div>
+                    <div>
+                        <strong> Si enceinte (If pregnant) :</strong>
+                        <obs conceptId="$@PREGNANCY_CHECK@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N"
+                            style="radio" id="pregnancyStatus" />
+                    </div>
                 </td>
-                <td>Employment status<i> (Etat d'emploi)</i>:
-                    <obs conceptId="$@EMPLOYMENT_STATUS@" answerConceptIds="$@YES@, $@NO@"
-                        answerLabels="Employed (Employé), Unemployed  (Sans emploi)" style="radio"
-                        id="employmentStatus" /> <br /><br />
-                    <obs conceptId="$@MAIN_ACTIVITY@" labelText="Occupation:"
-                        answerConceptIds="$@TRADING@,$@FARMER@,$@STUDENT@,$@UNEMPLOYED@,$@OTHER_NON-CODED@,$@MANUAL_LABORER@,$@SHEPHERD@,$@BREWER@,$@SHOP_OWNER@,$@FRUIT_OR_VEGETABLE_SELLER@,$@MINER@,$@FACTORY_WORKER@,$@HOUSEWORK@,$@RETIRED@,$@MAIN_ACTIVITY_NON_CODED@,$@UNKNOWN@,$@TOO_SICK_TO_WORK@,$@SCHOOL_AGE_BUT_NOT_IN_SCHOOL@,$@DRIVER@,$@PROFESSIONAL@"
-                        id="occupation" class="other_reason_here" />
+                <td>
+                    <div>
+                        <strong> Current residence type <i>(Type d'adresse)</i>:</strong>
+                        <obs conceptId="$@RESIDENCY_TYPE@"
+                            answerConceptIds="$@RESIDENCY_TYPE_SHELTER@, $@RESIDENCY_TYPE_RESIDENTIAL@, $@RESIDENCY_TYPE_HOMELESS@, $@RESIDENCY_TYPE_TEMPORARY@, $@RESIDENCY_TYPE_CORRECTION@"
+                            answerLabels="Shelter (Refuge), Residential (Residentielle), Homeless (Sans abri), Temporary (Temporaire), Correctional (Maison de detention)"
+                            id="residence_type" />
+                    </div>
+                    <div>
+                        <strong> Current residence <i>(Residence actuelle)</i>:</strong>
+                        <br />
+                        <lookup class="value" expression="patient.personAddress.stateProvince" />
+                        <br />
+                        <lookup class="value" expression="patient.personAddress.cityVillage" />
+                        <br />
+                        <lookup class="value" expression="patient.personAddress.address1" />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <strong> Martial Status <i>(Etat Matrimonial)</i>:</strong>
+                        <lookup class="value"
+                            complexExpression="#foreach( $relationship in $relationshipList ) $relationship  #end" />
+                    </div>
+                    <div>
+                        <strong> Employment status<i> (Etat d'emploi)</i>:</strong>
+                        <obs conceptId="$@EMPLOYMENT_STATUS@" answerConceptIds="$@YES@, $@NO@"
+                            answerLabels="Employed (Employé), Unemployed  (Sans emploi)" style="radio"
+                            id="employmentStatus" /> <br /><br />
+                        <obs conceptId="$@MAIN_ACTIVITY@" labelText="Occupation:"
+                            answerConceptIds="$@TRADING@,$@FARMER@,$@STUDENT@,$@UNEMPLOYED@,$@OTHER_NON-CODED@,$@MANUAL_LABORER@,$@SHEPHERD@,$@BREWER@,$@SHOP_OWNER@,$@FRUIT_OR_VEGETABLE_SELLER@,$@MINER@,$@FACTORY_WORKER@,$@HOUSEWORK@,$@RETIRED@,$@MAIN_ACTIVITY_NON_CODED@,$@UNKNOWN@,$@TOO_SICK_TO_WORK@,$@SCHOOL_AGE_BUT_NOT_IN_SCHOOL@,$@DRIVER@,$@PROFESSIONAL@"
+                            id="occupation" class="other_reason_here" />
+                    </div>
                 </td>
             </tr>
-            <tr>
-                <td colspan="2">
-                    Si enceinte (If pregnant) &#160;&#160;&#160;
-                    <obs conceptId="$@PREGNANCY_CHECK@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N"
-                        style="radio" id="pregnancyStatus" />
-                </td>
-            </tr>
+
         </table>
     </section>
     <!--===============================   Section 3 =======================================  -->
     <section headerLabel="HIV ACQUISITION RISK FACTORS">
         <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
             <tr>
-                <td>
+                <td width="50%">
                     <table cellspacing="0" cellpadding="6" width="100%">
                         <tr><strong>Vaginal or Anal sex without condoms in last 12 months:</strong><br><i>(Relation
                                 sexuelle vaginale ou anale sans condom durant les 12 Derniers mois):</i></br>
@@ -681,12 +718,11 @@
     <section headerLabel="HIV Testing Information ">
         <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
             <tr>
-                <td>Testing facility name (Nom de la FOSA de dépistage)
+                <td width="50%">Testing facility name (Nom de la FOSA de dépistage)
                     <obs conceptId="$@HIV_TESTING_FACILITY_NAME@" id="Testing_facility_name" />
                 </td>
-                <td>Date of HIV positive results confirmation (Date de confirmation du status VIH)
-                    <obs conceptId="$@DATE_HIV_POISITIVE_RESULT_CONFIRMED@"
-                        id="Date_of_HIV_positive_results_confirmation" />
+                <td>Date of HIV positive results confirmation (Date de confirmation du status VIH) : &#160;&#160;
+                    <lookup class="value" expression="fn.latestObs('1837').obsDatetime" />
                 </td>
             </tr>
             <tr>
@@ -754,6 +790,11 @@
                         <obs conceptId="$@LINKED_TO_TREATMENT@" labelText="Linked to treatment"
                             answerConceptIds="$@YES@, $@NO@" answerLabels="Yes(Oui), No(Non)" style="radio"
                             id="treatLink" /> <br />
+                        <div id="yesTreatLink" class="other_reason_here">
+                            trackNet : &#160;&#160;&#160;&#160;
+                            <lookup class="value"
+                                complexExpression="#foreach( $TRACnet in $patientIdentifiers.get('TRACnet ID')) $TRACnet #end " />
+                        </div>
                         <div id="noTreatLink" class="other_reason_here">
                             <br />
                             <obs conceptId="$@REASON_NOT_LINKED_TO_TREATMENT@" labelText="If no, why" />
@@ -775,8 +816,8 @@
         </section>
     </div>
     <!--===============================   Section 7 =======================================  -->
-    <section headerLabel="INITIATED ON TB PREVENTIVE THERAPY (TPT)">
-        <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
+    <section headerLabel="INITIATED ON TB PREVENTING THERAPY (TPT)">
+        <table>
             <tr>
                 <td>
                     <obs conceptId="$@INITIATED_ON_TPT@" labelText="Initiated on TPT" answerConceptIds="$@YES@, $@NO@"
@@ -786,30 +827,23 @@
                         class="other_reason_here" /><br />
                     <div class="other_reason_here" id="noTbMeds">
                         If No, reasons (Si non, pour quelles raisons) <br />
-                        &#160;&#160;&#160;&#160;&#160;
-                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@"
-                            labelText="Patient not willing (Le client n’est pas encore prêt pour le TPT)"
-                            answerConceptId="$@PATIENT_NOT_WILLING@" answerLabel="" id="aliveOnArt" />
+                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@" answerConceptId="$@PATIENT_NOT_WILLING@"
+                            answerLabel="Patient not willing (Le client n’est pas encore prêt pour le TPT)"
+                            id="aliveOnArt" />
                         <br />
-                        &#160;&#160;&#160;&#160;&#160;
-                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@"
-                            labelText="TPT is contra-indicated (Le TPT est contre-indique)"
-                            answerConceptId="$@TPT_IS_CONTRA_INDICATED@" answerLabel="" id="stoppedArt" />
+                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@" answerConceptId="$@TPT_IS_CONTRA_INDICATED@"
+                            answerLabel="TPT is contra-indicated (Le TPT est contre-indique)" id="stoppedArt" />
                         <br />
-                        &#160;&#160;&#160;&#160;&#160;
                         <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@"
-                            labelText="On TB treatment (Le patient est déjà sous-traitement anti-TB)"
-                            answerConceptId="$@PATIENT_IN_TUBERCULOSIS_TREATMENT@" answerLabel="" id="ltfu" />
+                            answerConceptId="$@PATIENT_IN_TUBERCULOSIS_TREATMENT@"
+                            answerLabel="On TB treatment (Le patient est déjà sous-traitement anti-TB)" id="ltfu" />
                         <br />
-                        &#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@" answerConceptId="$@TPT_DRUGS_OUT_OF_STOCK@"
+                            answerLabel="TPT drugs out of stock (rupture de stock des medicaments TPT)" id="to" />
+                        <br />
                         <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@"
-                            labelText="TPT drugs out of stock (rupture de stock des medicaments TPT)"
-                            answerConceptId="$@TPT_DRUGS_OUT_OF_STOCK@" answerLabel="" id="to" />
-                        <br />
-                        &#160;&#160;&#160;&#160;&#160;
-                        <obs conceptId="$@REASON_NOT_INITIATED_ON_TPT@" labelText="Other specify (Autre, spécifier)"
-                            answerConceptId="$@OTHER_REASON_PATIENT_NOT_INITIATED_ON_TPT@" answerLabel=""
-                            id="otherTbMed" />
+                            answerConceptId="$@OTHER_REASON_PATIENT_NOT_INITIATED_ON_TPT@"
+                            answerLabel="Other specify (Autre, spécifier)" id="otherTbMed" />
                         <br /><br /><br />
                     </div>
                     <obs conceptId="$@OTHER_REASON_PATIENT_NOT_INITIATED_ON_TPT@"
@@ -817,20 +851,78 @@
                         class="other_reason_here" />
                 </td>
             </tr>
-
         </table>
     </section>
     <!--===============================   Section 8 =======================================  -->
-    <section headerLabel="CURRENT/LAST ART TREATMENT INFORMATION">
+    <section headerLabel="INITIATED ON TB PREVENTIVE THERAPY (TPT)">
         <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
             <tr>
-                <td width="50%">
-                    <obs conceptId="$@STABLE@" labelText="Stable:" id="stable" answerConceptIds="$@YES@, $@NO@"
+                <td>
+                    <strong>Stable :</strong> &#160;&#160;
+                    <obs conceptId="$@STABLE@" id="stable" answerConceptIds="$@YES@, $@NO@"
                         answerLabels="Yes(Oui), No(Non)" style="radio" />
                 </td>
-                <td> 
-                    <obs conceptId="$@LAST_PHARMACY_PICK_UP@" labelText="Last Pharmacy pick up: " id="Last_Pharmacy_pick" />
+                <!-- <td>
+                    <strong>Initial ART Regimen :</strong> &#160;&#160;
+                    <br /><br />
+                    <strong>ART Start Regimen :</strong> &#160;&#160;
+                    <br /><br />
+                    <strong>If different,current ART Regimen :</strong> &#160;&#160;
+                    <br /><br />
+                    <strong>If different,ART Change Date :</strong> &#160;&#160;
+                    <br /><br />
+                </td> -->
+                <td>
+                    <strong>Last Pharmacy pick up :</strong>&#160;&#160;
+                    <lookup class="value" expression="fn.latestObs('5096').obsDatetime" />
                 </td>
+            </tr>
+
+        </table>
+    </section>
+    <!--===============================   Section 9 =======================================  -->
+    <section headerLabel="CURRENT/LAST ART CLINICAL INFORMATION">
+        <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <strong>WHO Stage :</strong> &#160;&#160;
+                    <lookup class="value" complexExpression="#if($fn.latestObs('1480').valueCoded ==1204) 1 #end
+                            #if($fn.latestObs('1480').valueCoded ==1205) 2 #end
+                            #if($fn.latestObs('1480').valueCoded ==1206) 3 #end
+                            #if($fn.latestObs('1480').valueCoded ==1207) 4 #end
+                            " />
+                    <br /><br />
+                    <strong>WHO Staging Date :</strong> &#160;&#160;
+                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                </td>
+                <td>
+                    <strong>CD4 count result :</strong> &#160;&#160;
+                    <lookup class="value"
+                        complexExpression="#foreach($cd4 in $fn.allObs(5497)) $cd4.valueNumeric #end" />
+                    <br /><br />
+                    <strong>Collection date :</strong> &#160;&#160;
+                    <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" /><br /><br />
+                    <strong>Result return date :</strong> &#160;&#160;
+                    <obs conceptId="$@DATE_OF_RETURNED_RESULT@" /><br />
+                </td>
+                <td>
+                    <strong>Viral load result :</strong>&#160;&#160;
+                    <lookup class="value"
+                        complexExpression="#foreach($load in $fn.allObs(856)) $load.valueNumeric #end " />
+                    <br /><br />
+                    <strong>Collection date :</strong> &#160;&#160;
+                    <obs conceptId="$@RECENCY_COLLECTION_DATE@" /><br /><br />
+                    <strong>Result return date :</strong> &#160;&#160;
+                    <obs conceptId="$@RECENCY_VIRAL_LOAD_RESULT_DATE@" /><br /><br />
+                </td>
+                <td>
+                    <strong>OI Name :</strong> &#160;&#160;
+                    <lookup class="value" complexExpression="#foreach($oi in $fn.allObs(1607)) $oi.valueCoded.name #end" />
+                    <br /><br />
+                    <strong>OI Diagnosis Date :</strong> &#160;&#160;
+                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                </td>
+
             </tr>
         </table>
     </section>
