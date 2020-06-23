@@ -66,6 +66,7 @@
         @CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@=7bfac55f-4ae4-4f4a-a597-5584e8be6020
         @CBC_COMMENT@=e328e0b0-28c3-44c9-9b2a-5f16b5185e2c
         @CBS_CONTACT_AGE_METER@=4f60313a-5520-493d-8ec6-83c8c5ef7220
+        @CBS_CONTACT_AGE_MOTH@=90f06a6e-53d0-4ed7-a9ce-598ec2642847
 
     </macros>
 
@@ -281,7 +282,7 @@
                                 $j('#other_reason_here_si_n_raison' + id).hide();
                                 return;
                             }
-                            if (getValue('cbs_reasons_contact_not_received' + id + '.value') == "105656") {
+                            if (getValue('cbs_reasons_contact_not_received' + id + '.value') == "105608") {
                                 $j('#other_reason_here_si_n_raison' + id).show();
                             } else {
                                 $j('#other_reason_here_si_n_raison' + id).hide();
@@ -326,6 +327,8 @@
                                 $j('#below_one_year_no').hide();
                                 return;
                             }
+                            console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+                            console.log(getValue('below_one_year.value'));
                             if (getValue('below_one_year.value') == "1065") {
                                 $j('#below_one_year_yes').show();
                                 $j('#below_one_year_no').hide();
@@ -340,7 +343,7 @@
                                 $j('.cbs_risk_of_violence_area').hide();
                                 return;
                             }
-                            if (getValue('cbs_risk_of_violence.value') == "1065") {
+                            if (getValue('cbs_risk_of_violence.value') == "1066") {
                                 $j('.cbs_risk_of_violence_area').show();
                             } else {
                                 $j('.cbs_risk_of_violence_area').hide();
@@ -434,17 +437,15 @@
                         getField('cbs_risk_of_violence.error').html('This field is required').hide();
                     }
 
-
-                    var invitation_fosa1 = getValue('invitation_fosa1.value');
-                    if (!invitation_fosa1 || invitation_fosa1 == "") {
-                        getField('invitation_fosa1.error').html('This field is required').show();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        return false;
-                    } else {
-                        getField('invitation_fosa1.error').html('This field is required').hide();
-                    }
-
-                    if (invitation_fosa1 == "1065") {
+                    if (invitation_fosa1 == "1066") {
+                        var invitation_fosa1 = getValue('invitation_fosa1.value');
+                        if (!invitation_fosa1 || invitation_fosa1 == "") {
+                            getField('invitation_fosa1.error').html('This field is required').show();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return false;
+                        } else {
+                            getField('invitation_fosa1.error').html('This field is required').hide();
+                        }
                         var testedForHIV1 = getValue('testedForHIV1.value');
                         if (!testedForHIV1 || testedForHIV1 == "") {
                             getField('testedForHIV1.error').html('This field is required').show();
@@ -539,12 +540,13 @@
                                 </td>
                                 <td>
                                     <obs conceptId="$@CBS_CONTACT_AGE_METER@" conceptAnswerIds="$@NO@, $@YES@"
-                                        answerLabels="In months, In years" style="radio" id="below_one_year" />
+                                        answerLabels="In months, In years" style="radio" id="below_one_year" /><span
+                                        class="mandotory-star">*</span>
                                     <div id="below_one_year_yes" class="other_reason_here">
                                         <obs conceptId="$@CBS_CONTACT_AGE@" labelText="Number of years : " />
                                     </div>
                                     <div id="below_one_year_no" class="other_reason_here">
-                                        <obs conceptId="$@CBS_CONTACT_AGE@" labelText="Number of months :" />
+                                        <obs conceptId="$@CBS_CONTACT_AGE_MOTH@" labelText="Number of months :" />
                                     </div>
                                 </td>
                             </tr>
@@ -564,19 +566,19 @@
                                     <div>
                                         <obs conceptId="$@RELATION_OF_THE_CONTACT_AND_INDEX_CASE@"
                                             conceptAnserIds="$@Spouse_Husband_Fiancé@, $@Girlfiend_Boyfriend@, $@Couple_cohabiting_partner@, $@Casual_partner@, $@Somon_who_pay_me_to_have_sex@, $@Somone_I_pay_to_have_sexual_relation@, $@Victim_of_violence@, $@Partner_is_unknown@, $@His_her_child@, $@Member_of_his_social_network@, $@Other_PWID_TG_etc@"
-                                            answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autres (PWID TG etc) (Other - PWID, TG, etc "
+                                            answerLabels="1. Epouse/Mari/Fiancé (Spouse/Husband/Fiancé), 2. Copine/Copain (Girlfiend/Boyfriend), 3. Co-habitants (Co-habiting), 4. Partenaire Occasionnel (Casual partner), 5. Quelqu’un(e) qui me paie pour avoir des relations sexuelles (Someone who pay me to have sexual relation), 6. Quelqu’un(e) que je paye pour avoir des relations sexuelles (Someone I pay  to have sexual relation), 7. Victime de Viol (Victim of violence), 8. Partenaire Inconnu(e) (Partner is unknown), 9. Son Enfant (His/her child), 10. Membre de son Réseau Social (Member of his social network), 11. Autre/Other "
                                             id="relationship_with_contact1" labelText="" />
                                         <span class="mandotory-star">*</span>
                                     </div>
                                     <div id="other_reason_here_1" class="other_reason_here">
-                                        Si autre specifier ici (If other specify here)
-                                        <obs conceptId="$@CBS_AUTRE_REASON_INDEX_CASE@" conceptLabel="" id="41" />
+                                        Si autre specifier ici (If other specify here) :
+                                        <obs conceptId="$@CBS_AUTRE_REASON_INDEX_CASE@" rows="4" cols="40" id="41" />
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Contact HIV Status (P= Positif,N= Negatif, Inconnu)(Status VIH du Contact):
+                                    Status VIH du Contact (P= Positif,N= Negatif, Inconnu) (Contact HIV Status):
                                 </td>
                                 <td>
                                     <obs conceptId="$@CBS_CONTACT_HIV_STATUS@"
@@ -586,7 +588,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Risk of violence (Yes/No) (Risque de Violence (O=Oui/N=Non)):
+                                    Risque de Violence (O=Oui/N=Non) (Risk of violence (Yes/No)):
                                 </td>
                                 <td>
                                     <obs conceptId="$@CBS_RISK_OF_VIOLENCE@" conceptAnswerIds="$@NO@, $@YES@"
@@ -651,7 +653,7 @@
                                             Si autre specifier ici (If other specify here)
                                             <br />
                                             <obs conceptId="$@CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@"
-                                                conceptLabel="" id="81" />
+                                                conceptLabel="" id="81" rows="4" cols="40" />
                                         </div>
                                     </div>
                                     <div id="si_o_qui1" class="other_reason_here">
@@ -697,7 +699,8 @@
                                             <div id="other_reason_here_si_n_hiv1" class="other_reason_here">
                                                 Si autre specifier ici (If other specify here)
                                                 <br />
-                                                <obs conceptId="$@CBS_AUTRE_REASON_HIV@" conceptLabel="" id="111" />
+                                                <obs conceptId="$@CBS_AUTRE_REASON_HIV@" conceptLabel="" id="111"
+                                                    rows="4" cols="40" />
                                             </div>
                                         </div>
                                     </div>
@@ -736,7 +739,7 @@
                                     <div id="cbs_enrolled_upid1" class="other_reason_here">
                                         <div>
                                             <obs conceptId="$@CBS_ENROLLED_UPID@"
-                                                labelText='Si "Y" Son UPID (If "Y" his/her UPID)' id="141"
+                                                labelText='Si "O" Son UPID (If "Y" his/her UPID)' id="141"
                                                 conceptLabel="" />
                                         </div>
                                     </div>
@@ -756,7 +759,7 @@
                             <tr>
                                 <td>Observation (Comments)</td>
                                 <td>
-                                    <obs conceptId="$@CBC_COMMENT@" conceptLabel="" id="151" />
+                                    <obs conceptId="$@CBC_COMMENT@" rows="4" cols="40" id="151" />
                                 </td>
                             </tr>
                         </table>

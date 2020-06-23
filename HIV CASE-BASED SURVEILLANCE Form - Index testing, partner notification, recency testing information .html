@@ -95,6 +95,7 @@
         @Nyagatare_Hospital@=8a75974a-67b6-4a57-8902-4217819dba4c
         @Centre_Hôspitalier_Universitaire_de_Butare@=2b472c6b-a0d4-44b1-bb2f-3d44289a19e5
         @RMH@=52e2552c-cfac-4b8b-b5ad-55a1da58a1e1
+        @DATE_ANTI_RETROVIRALS_STARTED_HIDE@ = a84ccc24-fd81-4e18-ba82-5a785c2f86bc
 
     </macros>
     <style>
@@ -180,6 +181,11 @@
         if (jQuery) {
 
             $j(document).ready(function () {
+                $j(function () {
+                    $j("#obs1").hide();
+                    var myvalue1 = $j("#look1").text();
+                    setValue('obs_value1.value', myvalue1.trim());
+                });
 
                 var url = new URL(window.location.href);
 
@@ -278,12 +284,14 @@
             <tr>
                 <td>Date de début des ARVs (Date of ART initiation):</td>
                 <td>
-                    <lookup class="value" expression="fn.latestObs(2516).obsDatetime" />
-                    <!-- <lookup expression="fn.currentProgramWorkflowStatus(2).dateCreated" />  -->
+                    <div id="look1">
+                        <lookup class="value" expression="fn.currentProgramWorkflowStatus(2).startDate" />
+                    </div>
+                    <!-- <lookup class="value" expression="fn.latestObs(2516).obsDatetime" /> -->
                     <!-- <lookup class="value" expression="patient.ANTIRETROVIRALS_obsDatetime" />-->
                     <!-- <lookup complexExpression="#foreach($order in $fn.allOrders(b42f0377-f077-4af4-8ee1-cdeee93f0621)) $order.startDate #end" /> -->
                     <!-- <lookup class="value" expression="fn.globalProperty('ANTIRETROVIRAL DRUGS')" /> -->
-                    <!-- <obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED@" allowFutureDates="true" /> -->
+                    <!-- -->
                 </td>
             </tr>
         </table>
@@ -332,6 +340,9 @@
                 </td>
                 <td>
                     <obs conceptId="$@DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@" allowFutureDates="true" />
+                    <div id="obs1">
+                        <obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED_HIDE@" id="obs_value1" />
+                    </div>
                 </td>
             </tr>
         </table>

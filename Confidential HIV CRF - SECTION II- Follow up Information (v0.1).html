@@ -176,19 +176,23 @@
         @CBS_HAEMATOLOGICAL@=cd86fba4-3221-4d80-9e4c-c8e03b659136
         @CBS_NEW_REGIMEN_INTRO@=d1ce8485-1cf6-422c-a8cf-7193bf18abbf
         @WHO_STAGE@=3cdb3b02-26fe-102b-80cb-0017a47871b2
-        @WHO_STAGE_1@=3cd7ee16-26fe-102b-80cb-0017a47871b2
-        @WHO_STAGE_2@=3cd7ef9c-26fe-102b-80cb-0017a47871b2
-        @WHO_STAGE_3@=3cd7f118-26fe-102b-80cb-0017a47871b2
-        @WHO_STAGE_4@=3cd7f294-26fe-102b-80cb-0017a47871b2
+        @WHO_STAGE_1_ADULT@=RWANDA:1204
+        @WHO_STAGE_2_ADULT@=RWANDA:1205
+        @WHO_STAGE_3_ADULT@=RWANDA:1206
+        @WHO_STAGE_4_ADULT@=RWANDA:1207
         @WHO_STAGING_DATE@=91b0d6ea-f0fa-461c-9de3-a3018e803ea0
         @CD4@=3ceda710-26fe-102b-80cb-0017a47871b2
         @DATE_OF_RETURNED_RESULT@=c19867c0-fec9-404c-bf25-6cf7a8c54eb7
+        @VIRAL_LOAD@=3cd4a882-26fe-102b-80cb-0017a47871b2
         @RECENCY_VIRAL_LOAD_RESULT@=aae8d7fe-8bbc-4d2e-926c-0e28b4d0e046
         @RECENCY_COLLECTION_DATE@=fa87bb43-ebcc-4919-96f8-c5013ce1bbca
         @OI_NAME@=a1956646-837c-4421-8a33-b294b62aee97
         @OI_DATE@=6781dba8-422d-455b-a26c-41a99c744444
         @RECENCY_SAMPLE_COLLECTION_DATE@=774f49dc-cd95-4f7e-a20f-b38f9a1f52c4
         @RECENCY_VIRAL_LOAD_RESULT_DATE@=f4e3f60a-2f62-47bc-b968-156b3df91067
+        @CURRENT_OPPORTUNISTIC_INFECTION_CONSTRUCT@=RWANDA:6900
+        @CURRENT_OPPORTUNISTIC_INFECTION@=RWANDA:1607
+        @CURRENT_OPPORTUNISTIC_INFECTION_NON_CODED@=RWANDA:1731
 
 
     </macros>
@@ -288,7 +292,7 @@
                     hideByDefault();
                 }
 
-                function hideByDefault(mode) {
+                function hideByDefault() {
                     toggleInput('artChange');
                     toggleInput('toxicity');
                     toggleInput('otherARVChange');
@@ -328,9 +332,9 @@
                     toggleInput('riskFactorYes');
                 });
 
-                // $j('#demoChange').change(function () {
-                //     toggleInput('demoChange');
-                // });
+                $j('#demoChange').click(function () {
+                    toggleInput('demoChange');
+                });
 
                 $j('#employmentStatus').click(function () {
                     toggleInput('employmentStatus');
@@ -426,6 +430,7 @@
                             }
                             break;
                         case 'employmentStatus':
+                            console.log(getValue('employmentStatus.value'));
                             if (!getValue('employmentStatus.value')) {
                                 $j('#occupation').hide();
                                 return;
@@ -436,13 +441,13 @@
                                 $j('#occupation').hide();
                             }
                             break;
-                        // case 'demoChange':
-                        //     if (getValue('demoChange.value') == "1065") {
-                        //         alert(" Please update the demographic information in the Demographic patient Form");
-                        //     } else {
-                        //         console.log("no change");
-                        //     }
-                        //     break;
+                        case 'demoChange':
+                            if (getValue('demoChange.value') == "1065") {
+                                alert(" Please update the demographic information in the Demographic patient Form");
+                            } else {
+                                console.log("no change");
+                            }
+                            break;
                         default:
                             console.log(mode);
                     }
@@ -455,7 +460,7 @@
                     var date = getValue('encounterDate.value');
                     var provider = getValue('encounterProvider.value');
                     var location = getValue('encounterLocation.value');
-                    // var demographicChange = getValue('demoChange.value');
+                    var demographicChange = getValue('demoChange.value');
 
                     if (!date) {
                         getField('encounterDate.error').html('This field is required').show();
@@ -478,14 +483,13 @@
                     } else {
                         getField('encounterLocation.error').html('This field is required').hide();
                     }
-                    // if (!demographicChange) {
-                    //     getField('demoChange.error').html('This field is required').show();
-                    //     window.scrollTo({ top: 0, behavior: 'smooth' });
-                    //     return false;
-                    // } else {
-                    //     getField('demoChange.error').html('This field is required').hide();
-                    // }
-
+                    if (!demographicChange) {
+                        getField('demoChange.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('demoChange.error').html('This field is required').hide();
+                    }
                     return true;
                 });
 
@@ -542,7 +546,7 @@
                         complexExpression="#foreach( $patId in $patientIdentifiers.get('TRACnet ID') ) $patId #end " />
                 </td>
             </tr>
-            <!-- <tr>
+            <tr>
                 <td colspan="2">
                     <obs conceptId="$@DEMOGRAPHIC_CHANGE@" labelText="Any change in demographic information?"
                         answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" id="demoChange"
@@ -550,7 +554,7 @@
                     &#160;&#160;&#160; If Yes, Please update the demographic information in the HIV CASE-BASED
                     SURVEILLANCE Form
                 </td>
-            </tr> -->
+            </tr>
         </table>
     </section>
     <!--===============================   Section 3 =======================================  -->
@@ -566,11 +570,13 @@
                         <strong> Gender :</strong>
                         <lookup class="value" expression="patient.gender" />
                     </div>
-                    <div>
-                        <strong> Si enceinte (If pregnant) :</strong>
-                        <obs conceptId="$@PREGNANCY_CHECK@" answerConceptIds="$@YES@, $@NO@" answerLabels="Y, N"
-                            style="radio" id="pregnancyStatus" />
-                    </div>
+                    <includeIf velocityTest="$patient.gender == 'F' ">
+                        <div>
+                            <strong> Si enceinte (If pregnant) :</strong>
+                            <obs conceptId="$@PREGNANCY_CHECK@" answerConceptIds="$@YES@, $@NO@,$@UNKNOWN@"
+                                answerLabels="Y, N,UKNOWN" style="radio" id="pregnancyStatus" />
+                        </div>
+                    </includeIf>
                 </td>
                 <td>
                     <div>
@@ -583,10 +589,19 @@
                     <div>
                         <strong> Current residence <i>(Residence actuelle)</i>:</strong>
                         <br />
+                        Province :&#160;&#160;&#160;&#160;
                         <lookup class="value" expression="patient.personAddress.stateProvince" />
                         <br />
+                        District :&#160;&#160;&#160;&#160;
+                        <lookup class="value" expression="patient.personAddress.countyDistrict" />
+                        <br />
+                        Sector :&#160;&#160;&#160;&#160;
                         <lookup class="value" expression="patient.personAddress.cityVillage" />
                         <br />
+                        Cell :&#160;&#160;&#160;&#160;
+                        <lookup class="value" expression="patient.personAddress.address3" />
+                        <br />
+                        Umudugudu :&#160;&#160;&#160;&#160;
                         <lookup class="value" expression="patient.personAddress.address1" />
                     </div>
                 </td>
@@ -627,12 +642,9 @@
                         <obs conceptId="$@NUMBER_OF_SEXUAL_PARTNERS_NOT_REPORTED_AT_LAST_VISIT@" />
                     </div>
                 </td>
-
             </tr>
-
         </table>
         <br /><br />
-
     </section>
     <!--===============================   Section 5 =======================================  -->
     <section headerLabel="CURRENT ART INFORMATION">
@@ -640,18 +652,23 @@
             <tr>
                 <td width="50%">
                     <strong> Stable : </strong>
-                    <obs conceptId="$@STABLE@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" />
-                    <br /> <br />
-                    <strong> Current regimen : </strong>
+                    <!-- <obs conceptId="$@STABLE@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" /> -->
+                    <lookup class="value" complexExpression="#if($fn.latestObs('105718').valueCoded ==1065) STABLE #end
+                    #if($fn.latestObs('105718').valueCoded ==1066) UNSTABLE #end 
+                    " />
                     <br /> <br />
                     <strong> Last Pharmacy Pick up (Dernière Date de Prescription ARV):</strong>
-                    <lookup class="value" expression="fn.latestObs('5096').obsDatetime" />
+                    <lookup class="value" expression="fn.latestObs('5096').obsDatetime" /> 
+                    <!-- <lookup class="value" expression="fn.latestObs('105607').obsDatetime" /> -->
                 </td>
                 <td>
                     <div>
                         Change in the regimen
                         <obs conceptId="$@CHANGE_IN_TREATMENT@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No"
                             style="radio" id="artChange" />
+                        <!-- <lookup class="value" complexExpression="#if($fn.latestObs('2432').valueCoded ==1065) YES #end
+                            #if($fn.latestObs('2432').valueCoded ==1066) NO #end 
+                            " /> -->
                     </div>
                     <br />
                     <div id="reasonArtChange" class="other_reason_here">
@@ -680,7 +697,6 @@
                             answerConceptId="$@TOXICITY@" id="toxicity" />
                         <br />
                     </div>
-
                     <div id="toxicityTypes" class="other_reason_here">
                         <strong>If Toxicity, select type:</strong> <br />
                         <obs conceptId="$@DRUG_TOXICITY_TYPES@" answerLabel="GI (gastro-intestinale)"
@@ -718,7 +734,6 @@
                         <obs conceptId="$@REASON_ANTIRETROVIRALS_CHANGED_OR_STOPPED@" answerLabel="Other"
                             answerConceptId="$@OTHER_NON_CODED@" style="checkbox" id="otherARVChange" />
                     </div>
-
                     <br />
                     <obs conceptId="$@REASON_ANTIRETROVIRALS_CHANGED_OR_STOPPED_NON_CODED@"
                         labelText="If Other reason for Regimen Change, specify:" id="otherARVReason"
@@ -730,10 +745,39 @@
     <!--===============================   Section 6 =======================================  -->
     <section headerLabel="CURRENT CLINICAL INFORMATION">
         <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
-            <tr class="checkboxGroup">
-                <td width="50%">
+            <tr>
+                <td width="25%">
+                    <strong>WHO Stage :</strong> &#160;&#160;
+                    <obs conceptId="$@WHO_STAGE@"
+                        answerConceptIds="$@WHO_STAGE_1_ADULT@,$@WHO_STAGE_2_ADULT@,$@WHO_STAGE_3_ADULT@,$@WHO_STAGE_4_ADULT@"
+                        answerLabels="1,2,3,4" style="radio" />
+                    <br /><br />
+                    <strong>WHO Staging Date :</strong> &#160;&#160;
+                    <obs conceptId="$@WHO_STAGING_DATE@" />
+                    <!-- <lookup class="value" expression="fn.latestObs('1480').obsDatetime" /> -->
+                </td>
+                <td width="25%">
+                    <strong>Viral load result :</strong>&#160;&#160;
+                    <!-- <lookup class="value" expression="fn.latestObs('856').valueNumeric" /> -->
+                    <obs conceptId="$@VIRAL_LOAD@" />
+                    <br /><br />
+                    <strong>Collection date :</strong> &#160;&#160;
+                    <obs conceptId="$@RECENCY_COLLECTION_DATE@" />
+                    <br /><br />
+                    <strong>Result return date :</strong> &#160;&#160;
+                    <obs conceptId="$@RECENCY_VIRAL_LOAD_RESULT_DATE@" />
+                    <!-- <lookup class="value" expression="fn.latestObs('856').obsDatetime" /> -->
+                    <br /><br />
+                </td>
+                <td width="25%">
+                    <strong>OI Name :</strong> &#160;&#160;
+                    <obs conceptId="$@CURRENT_OPPORTUNISTIC_INFECTION@" id="currentOpportunisticInfection" />
+                    <br /><br />
+                    <strong>OI Diagnosis Date :</strong> &#160;&#160;
+                    <obs conceptId="$@OI_DATE@" />
+                </td>
+                <td width="25%">
                     <div>Client Outcome:</div> <br />
-
                     <obs conceptId="$@CASE_BASED_SURVEILLANCE_CLIENT_OUTCOME@"
                         answerConceptIds="$@ALIVE_AND_ON_ART@, $@TREATMENT_STOPPED@, $@LOST_TO_FOLLOWUP@, $@TRANSFER_OUT_TO@, $@Death@"
                         answerLabels="Alive and on ART,Stopped,Lost to followup,Transfer Out (TO),Death" style="radio"
@@ -744,58 +788,13 @@
                         id="deathCause" class="other_reason_here" />
                     <obs conceptId="$@REASON_LIKEND_TO_FACILITY@" labelText="If Transfer, where" id="transferto"
                         class="other_reason_here" />
-                </td>
-                <td>
+                    <br />
+                    <br />
                     <obs conceptId="$@OUTCOME_DATE@" labelText="Outcome date:" />
                 </td>
             </tr>
         </table>
-        <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td>
-                    <strong>WHO Stage :</strong> &#160;&#160;
-                    <lookup class="value" complexExpression="#if($fn.latestObs('1480').valueCoded ==1204) 1 #end
-                            #if($fn.latestObs('1480').valueCoded ==1205) 2 #end
-                            #if($fn.latestObs('1480').valueCoded ==1206) 3 #end
-                            #if($fn.latestObs('1480').valueCoded ==1207) 4 #end
-                            " />
-                    <br /><br />
-                    <strong>WHO Staging Date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
-                </td>
-                <td>
-                    <strong>CD4 count result :</strong> &#160;&#160;
-                    <lookup class="value"
-                        complexExpression="#foreach($cd4 in $fn.allObs(5497)) $cd4.valueNumeric #end" />
-                    <br /><br />
-                    <strong>Collection date :</strong> &#160;&#160;
-                    <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" /><br /><br />
-                    <strong>Result return date :</strong> &#160;&#160;
-                    <obs conceptId="$@DATE_OF_RETURNED_RESULT@" /><br />
-                </td>
-                <td>
-                    <strong>Viral load result :</strong>&#160;&#160;
-                    <lookup class="value"
-                        complexExpression="#foreach($load in $fn.allObs(856)) $load.valueNumeric #end " />
-                    <br /><br />
-                    <strong>Collection date :</strong> &#160;&#160;
-                    <obs conceptId="$@RECENCY_COLLECTION_DATE@" /><br /><br />
-                    <strong>Result return date :</strong> &#160;&#160;
-                    <obs conceptId="$@RECENCY_VIRAL_LOAD_RESULT_DATE@" /><br /><br />
-                </td>
-                <td>
-                    <strong>OI Name :</strong> &#160;&#160;
-                    <lookup class="value"
-                        complexExpression="#foreach($oi in $fn.allObs(1607)) $oi.valueCoded.name #end" />
-                    <br /><br />
-                    <strong>OI Diagnosis Date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
-                </td>
-
-            </tr>
-        </table>
     </section>
-
     <!--===============================   Section 7 =======================================  -->
     <section>
         <table cellspacing="0" cellpadding="6" width="100%">
@@ -812,7 +811,6 @@
                     <strong> If VL > 200c/ml, Client Adherence: (Si charge virale>200c/ml, l’adhérence du client
                         est):</strong>
                     <br />
-                    <!-- <obs conceptId="$@OVERALL_TREATMENT_ADHERENCE@" labelText="" answerConceptIds="$@GOOD@, $@FAIR@, $@POOR@" answerLabels="Good (Bonne) (meet pill count and come to all appointments), Moderate (Moyenne) (meet pill count and miss appointment(s)), Bad (Mauvaise) (fail pill count and miss appointment(s))" style="radio"/> -->
                     <lookup class="value" complexExpression="#if(3 > $fn.latestObs('1738').valueNumeric) very Good #end
                         #if($fn.latestObs('1738').valueNumeric ==4) Good #end
                         #if($fn.latestObs('1738').valueNumeric ==5) Good #end
@@ -847,15 +845,12 @@
                         <obs conceptId="$@TPT_THERAPY_IN_PROGRESS@" answerConceptId="$@DEFAULTED_TB@"
                             answerLabel="Defaulted (Perdu de vue)" />
                         <br />
-
                         <obs conceptId="$@TPT_THERAPY_IN_PROGRESS@" answerConceptId="$@ADVERSE_EFFECT@"
                             answerLabel="Stopped because of adverse events (Arrêt du TPT à cause des effets secondaires)" />
                         <br />
-
                         <obs conceptId="$@TPT_THERAPY_IN_PROGRESS@" answerConceptId="$@ACTIVE_TB@"
                             answerLabel="Stopped because of development of active TB during TPT (Arrêt du TPT à cause du développement de la TB-maladie)" />
                         <br />
-
                         <obs conceptId="$@TPT_THERAPY_IN_PROGRESS@"
                             answerLabel="Stopped because of contra-indications other than active TB (Arrêt du TPT à cause des contre-indications, autre que la TB-maladie"
                             answerConceptId="$@CONTRAINDICATIONS_OTHER_THAN_ACTIVE_TB@" />
