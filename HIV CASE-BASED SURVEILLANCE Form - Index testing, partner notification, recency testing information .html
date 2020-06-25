@@ -186,8 +186,8 @@
                 $j("#obs1").hide();
                 var username = $j("#obs_username").text().trim();
                 var password = $j("#obs_password").text().trim();
-                $j("#obs_username").hide();
-                $j("#obs_password").hide();
+                $j("#obs_username").remove();
+                $j("#obs_password").remove();
                 var patientUuid = $j("#patient_id").text();
                 var ANTIRETROVIRAL_DRUGS_UUID = "3cd72184-26fe-102b-80cb-0017a47871b2";
 
