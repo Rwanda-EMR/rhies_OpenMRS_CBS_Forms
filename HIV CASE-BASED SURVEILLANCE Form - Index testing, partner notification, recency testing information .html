@@ -180,18 +180,16 @@
     <script type="text/javascript">
         if (jQuery) {
             var url = new URL(window.location.href);
-                console.log(url)
-
             $j(document).ready(function () {
-                console.log("Patient" ,$j.trim($j("#patient_id").text() ))
                 var patientUuid = $j("#patient_id").text();
+                var ANTIRETROVIRAL_DRUGS_UUID = "3cd72184-26fe-102b-80cb-0017a47871b2";
+                
                 const params = new URLSearchParams({
                     patient: $j.trim(patientUuid),
                     v: "full"
                 });
                 var apiAddress = url.origin+"/openmrs/ws/rest/v1/order?"
                 apiAddress = apiAddress + params.toString();
-                console.log(apiAddress)
                 const url1 = apiAddress;
                 const options = {
                     headers: {
@@ -206,18 +204,30 @@
                         console.log(data) ;
                         var orders =  data.results;
                         var regimentStartDate = undefined;
-                        console.log(orders)
                         if (orders[0]){
+                            const url2 = url.origin+"/openmrs/ws/rest/v1/concept/"+ANTIRETROVIRAL_DRUGS_UUID
+                            fetch(url2, options)
+                            .then( res => res.json() )
+                            .then( 
+                                data => {
+                                    var arvs = [];
+                                    for (var i in  data.setMembers) {//The set of ANTIRETROVIRAL DRUGS 
+                                        arvs.push(data.setMembers[i].uuid);
+                                    }
 
-                            orders.sort(function(a, b) {
-                                var dateA = new Date(a.startDate), dateB = new Date(b.startDate);
-                                return dateA - dateB;
-                            });
-                            var regimentStartDate = orders[1].startDate;
-                            var d = regimentStartDate.slice(0, 10).split('-');   
-                            regimentStartDate = d[2] +'/'+ d[1] +'/'+ d[0]; // 10/30/2010
-                            $j("#regimentStartDate").text(regimentStartDate);
-                            console.log(regimentStartDate);
+                                    var arvOrders = orders.filter(o => arvs.includes(o.concept.uuid));
+                                    arvOrders.sort(function(a, b) {
+                                        var dateA = new Date(a.startDate), dateB = new Date(b.startDate);
+                                        return dateA - dateB;
+                                    });
+                                    
+                                    var regimentStartDate = arvOrders[0].startDate;
+                                    var d = regimentStartDate.slice(0, 10).split('-');   
+                                    regimentStartDate = d[2] +'/'+ d[1] +'/'+ d[0]; // 10/30/2010
+                                    $j("#regimentStartDate").text(regimentStartDate);
+                                    console.log(regimentStartDate);
+                                }
+                            );
                         }
                     }
                 );
