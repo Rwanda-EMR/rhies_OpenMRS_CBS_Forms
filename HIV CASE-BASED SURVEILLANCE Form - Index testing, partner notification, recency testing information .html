@@ -183,6 +183,7 @@
         if (jQuery) {
             var url = new URL(window.location.href);
             $j(document).ready(function () {
+                $j("#obs1").hide();
                 var username = $j("#obs_username").text().trim();
                 var password = $j("#obs_password").text().trim();
                 $j("#obs_username").hide();
@@ -230,17 +231,15 @@
                                             var d = regimentStartDate.slice(0, 10).split('-');
                                             regimentStartDate = d[0] + '-' + d[1] + '-' + d[2]; // "yyyy-mm-dd"
                                             $j("#regimentStartDate").text(regimentStartDate);
+
+                                            var myvalue1 = regimentStartDate;
+                                            setValue('obs_value1.value', myvalue1);
                                         }
                                     );
                             }
                         }
                     );
 
-                $j(function () {
-                    $j("#obs1").hide();
-                    var myvalue1 = $j("#look1").text();
-                    setValue('obs_value1.value', myvalue1.trim());
-                });
 
                 if (url.searchParams.get("mode") == "EDIT") {//Edit
                     console.log("Mode Edit");

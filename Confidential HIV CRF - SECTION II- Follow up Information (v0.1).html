@@ -716,9 +716,10 @@
                     <strong> Stable : </strong>
                     <!-- <obs conceptId="$@STABLE@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" /> -->
                     <div id="look1">
-                        <lookup class="value" complexExpression="#if($fn.latestObs('105718').valueCoded ==1065) STABLE #end
+                        <!-- <lookup class="value" complexExpression="#if($fn.latestObs('105718').valueCoded ==1065) STABLE #end
                     #if($fn.latestObs('105718').valueCoded ==1066) UNSTABLE #end 
-                    " />
+                    " /> -->
+                    <lookup class="value" expression="fn.currentProgramState(2).state.concept.name" />
                     </div>
                     <div id="obs1">
                         <obs conceptId="$@STABLE_HIDE@" id="obs_value1" />
