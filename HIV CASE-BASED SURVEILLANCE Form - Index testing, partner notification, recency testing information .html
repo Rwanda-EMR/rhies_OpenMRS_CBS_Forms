@@ -201,7 +201,6 @@
                 .then( res => res.json() )
                 .then( 
                     data => {
-                        console.log(data) ;
                         var orders =  data.results;
                         var regimentStartDate = undefined;
                         if (orders[0]){
@@ -223,7 +222,7 @@
                                     
                                     var regimentStartDate = arvOrders[0].startDate;
                                     var d = regimentStartDate.slice(0, 10).split('-');   
-                                    regimentStartDate = d[2] +'/'+ d[1] +'/'+ d[0]; // 10/30/2010
+                                    regimentStartDate = d[0] +'-'+ d[1] +'-'+ d[2]; // "yyyy-mm-dd"
                                     $j("#regimentStartDate").text(regimentStartDate);
                                     console.log(regimentStartDate);
                                 }
@@ -337,14 +336,8 @@
                 <td>Date de début des ARVs (Date of ART initiation):</td>
                 <td>
                     <div id="look1">
-                        <span class="value" id="regimentStartDate"> Unknown  </span>
+                        <span class="value" id="regimentStartDate">   </span>
                     </div>
-                    <!-- <lookup class="value" expression="fn.currentProgramWorkflowStatus(2).startDate" /> 
-                        <lookup class="value" expression="fn.latestObs(2516).obsDatetime" /> -->
-                    <!-- <lookup class="value" expression="patient.ANTIRETROVIRALS_obsDatetime" />-->
-                    <!-- <lookup complexExpression="#foreach($order in $fn.allOrders(b42f0377-f077-4af4-8ee1-cdeee93f0621)) $order.startDate #end" /> -->
-                    <!-- <lookup class="value" expression="fn.globalProperty('ANTIRETROVIRAL DRUGS')" /> -->
-                    <!-- -->
                 </td>
             </tr>
         </table>
