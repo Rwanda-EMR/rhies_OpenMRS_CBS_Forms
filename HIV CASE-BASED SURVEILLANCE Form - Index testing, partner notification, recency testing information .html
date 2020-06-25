@@ -179,16 +179,55 @@
     </style>
     <script type="text/javascript">
         if (jQuery) {
+            var url = new URL(window.location.href);
+                console.log(url)
 
             $j(document).ready(function () {
+                console.log("Patient" ,$j.trim($j("#patient_id").text() ))
+                var patientUuid = $j("#patient_id").text();
+                const params = new URLSearchParams({
+                    patient: $j.trim(patientUuid),
+                    v: "full"
+                });
+                var apiAddress = url.origin+"/openmrs/ws/rest/v1/order?"
+                apiAddress = apiAddress + params.toString();
+                console.log(apiAddress)
+                const url1 = apiAddress;
+                const options = {
+                    headers: {
+                        Authorization: "Basic " + btoa("geoffrey:Ganyugxy1")
+                    }
+                };
+
+                fetch(url1, options)
+                .then( res => res.json() )
+                .then( 
+                    data => {
+                        console.log(data) ;
+                        var orders =  data.results;
+                        var regimentStartDate = undefined;
+                        console.log(orders)
+                        if (orders[0]){
+
+                            orders.sort(function(a, b) {
+                                var dateA = new Date(a.startDate), dateB = new Date(b.startDate);
+                                return dateA - dateB;
+                            });
+                            var regimentStartDate = orders[1].startDate;
+                            var d = regimentStartDate.slice(0, 10).split('-');   
+                            regimentStartDate = d[2] +'/'+ d[1] +'/'+ d[0]; // 10/30/2010
+                            $j("#regimentStartDate").text(regimentStartDate);
+                            console.log(regimentStartDate);
+                        }
+                    }
+                );
+            
                 $j(function () {
                     $j("#obs1").hide();
                     var myvalue1 = $j("#look1").text();
                     setValue('obs_value1.value', myvalue1.trim());
                 });
-
-                var url = new URL(window.location.href);
-
+                
                 if (url.searchParams.get("mode") == "EDIT") {//Edit
                     console.log("Mode Edit");
                 } else if (url.searchParams.get("formId")) {//Creation
@@ -249,6 +288,9 @@
     <p><strong>Index testing, partner notification, recency testing information </strong></p>
     <!--===============================   Section 1 =======================================  -->
     <section headerLabel="1. Encounter Details">
+        <div id="patient_id" style="display:none">
+            <lookup expression="patient.uuid" /> 
+        </div>
         <table cellspacing="0" cellpadding="6" width="100%">
             <tr>
                 <td width="50%">Date:</td>
@@ -285,9 +327,10 @@
                 <td>Date de début des ARVs (Date of ART initiation):</td>
                 <td>
                     <div id="look1">
-                        <lookup class="value" expression="fn.currentProgramWorkflowStatus(2).startDate" />
+                        <span class="value" id="regimentStartDate"> Unknown  </span>
                     </div>
-                    <!-- <lookup class="value" expression="fn.latestObs(2516).obsDatetime" /> -->
+                    <!-- <lookup class="value" expression="fn.currentProgramWorkflowStatus(2).startDate" /> 
+                        <lookup class="value" expression="fn.latestObs(2516).obsDatetime" /> -->
                     <!-- <lookup class="value" expression="patient.ANTIRETROVIRALS_obsDatetime" />-->
                     <!-- <lookup complexExpression="#foreach($order in $fn.allOrders(b42f0377-f077-4af4-8ee1-cdeee93f0621)) $order.startDate #end" /> -->
                     <!-- <lookup class="value" expression="fn.globalProperty('ANTIRETROVIRAL DRUGS')" /> -->
