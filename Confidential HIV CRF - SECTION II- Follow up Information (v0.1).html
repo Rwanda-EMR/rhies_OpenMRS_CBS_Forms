@@ -280,11 +280,11 @@
             $j(document).ready(function () {
 
                 $j(function () {
-                    $j("#obs1").hide();
+                    // $j("#obs1").hide();
                     $j("#obs2").hide();
-                    var myvalue1 = $j("#look1").text().trim();
+                    // var myvalue1 = $j("#look1").text().trim();
                     var myvalue2 = $j("#look2").text().trim();
-                    setValue('obs_value1.value', myvalue1);
+                    // setValue('obs_value1.value', myvalue1);
                     setValue('obs_value2.value', myvalue2);
                 });
 
@@ -714,16 +714,16 @@
             <tr>
                 <td width="50%">
                     <strong> Stable : </strong>
-                    <!-- <obs conceptId="$@STABLE@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" /> -->
-                    <div id="look1">
-                        <!-- <lookup class="value" complexExpression="#if($fn.latestObs('105718').valueCoded ==1065) STABLE #end
+                    <obs conceptId="$@STABLE@" answerConceptIds="$@YES@, $@NO@" answerLabels="Yes, No" style="radio" />
+                    <!--   <div id="look1">
+                         <lookup class="value" complexExpression="#if($fn.latestObs('105718').valueCoded ==1065) STABLE #end
                     #if($fn.latestObs('105718').valueCoded ==1066) UNSTABLE #end 
-                    " /> -->
+                    " /> 
                     <lookup class="value" expression="fn.currentProgramState(2).state.concept.name" />
                     </div>
                     <div id="obs1">
                         <obs conceptId="$@STABLE_HIDE@" id="obs_value1" />
-                    </div>
+                    </div>-->
                     <br /> <br />
                     <strong> Last Pharmacy Pick up (Dernière Date de Prescription ARV):</strong>
                     <div id="look2">
