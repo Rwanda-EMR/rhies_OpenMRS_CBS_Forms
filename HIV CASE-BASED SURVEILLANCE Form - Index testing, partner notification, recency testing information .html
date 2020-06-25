@@ -258,6 +258,13 @@
                     var location = getValue('encounterLocation.value');
                     var enrollment = getValue('enrollDate.value');
 
+                    var date1 = new Date(enrollment);
+                    var date2 = new Date("2018-09-30");
+                    if (!(date1 > date2)) {
+                        alert("All enrollment date should  not be before 1 oct 2018");
+                        return false;
+                    };
+
                     if (!date || date == "") {
                         getField('encounterDate.error').html('This field is required').show();
                         window.scrollTo({ top: 0, behavior: 'smooth' });
