@@ -15,3 +15,8 @@ Mozilla Public License 2.0
 
 ## Main Contributors
 * Developers: Pierre Damien MURINDANGABO CYUZUZO, Anatole ABE
+
+## Libraries We Use
+The following sets forth attribution notices for third party software that may be contained in portions of this repository. We thank the open source community for all of their contributions.
+
+* OpenMRS - Mozilla Public License 2.0
