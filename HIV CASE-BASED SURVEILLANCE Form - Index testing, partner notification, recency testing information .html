@@ -183,62 +183,65 @@
         if (jQuery) {
             var url = new URL(window.location.href);
             $j(document).ready(function () {
+                var username = $j("#obs_username").text().trim();
+                var password = $j("#obs_password").text().trim();
+                $j("#obs_username").hide();
+                $j("#obs_password").hide();
                 var patientUuid = $j("#patient_id").text();
                 var ANTIRETROVIRAL_DRUGS_UUID = "3cd72184-26fe-102b-80cb-0017a47871b2";
-                
+
                 const params = new URLSearchParams({
                     patient: $j.trim(patientUuid),
                     v: "full"
                 });
-                var apiAddress = url.origin+"/openmrs/ws/rest/v1/order?"
+                var apiAddress = url.origin + "/openmrs/ws/rest/v1/order?"
                 apiAddress = apiAddress + params.toString();
                 const url1 = apiAddress;
                 const options = {
                     headers: {
-                        Authorization: "Basic " + btoa("geoffrey:Ganyugxy1")
+                        Authorization: "Basic " + btoa(username + ":" + password)
                     }
                 };
 
                 fetch(url1, options)
-                .then( res => res.json() )
-                .then( 
-                    data => {
-                        var orders =  data.results;
-                        var regimentStartDate = undefined;
-                        if (orders[0]){
-                            const url2 = url.origin+"/openmrs/ws/rest/v1/concept/"+ANTIRETROVIRAL_DRUGS_UUID
-                            fetch(url2, options)
-                            .then( res => res.json() )
-                            .then( 
-                                data => {
-                                    var arvs = [];
-                                    for (var i in  data.setMembers) {//The set of ANTIRETROVIRAL DRUGS 
-                                        arvs.push(data.setMembers[i].uuid);
-                                    }
+                    .then(res => res.json())
+                    .then(
+                        data => {
+                            var orders = data.results;
+                            var regimentStartDate = undefined;
+                            if (orders[0]) {
+                                const url2 = url.origin + "/openmrs/ws/rest/v1/concept/" + ANTIRETROVIRAL_DRUGS_UUID
+                                fetch(url2, options)
+                                    .then(res => res.json())
+                                    .then(
+                                        data => {
+                                            var arvs = [];
+                                            for (var i in data.setMembers) {//The set of ANTIRETROVIRAL DRUGS 
+                                                arvs.push(data.setMembers[i].uuid);
+                                            }
 
-                                    var arvOrders = orders.filter(o => arvs.includes(o.concept.uuid));
-                                    arvOrders.sort(function(a, b) {
-                                        var dateA = new Date(a.startDate), dateB = new Date(b.startDate);
-                                        return dateA - dateB;
-                                    });
-                                    
-                                    var regimentStartDate = arvOrders[0].startDate;
-                                    var d = regimentStartDate.slice(0, 10).split('-');   
-                                    regimentStartDate = d[0] +'-'+ d[1] +'-'+ d[2]; // "yyyy-mm-dd"
-                                    $j("#regimentStartDate").text(regimentStartDate);
-                                    console.log(regimentStartDate);
-                                }
-                            );
+                                            var arvOrders = orders.filter(o => arvs.includes(o.concept.uuid));
+                                            arvOrders.sort(function (a, b) {
+                                                var dateA = new Date(a.startDate), dateB = new Date(b.startDate);
+                                                return dateA - dateB;
+                                            });
+
+                                            var regimentStartDate = arvOrders[0].startDate;
+                                            var d = regimentStartDate.slice(0, 10).split('-');
+                                            regimentStartDate = d[0] + '-' + d[1] + '-' + d[2]; // "yyyy-mm-dd"
+                                            $j("#regimentStartDate").text(regimentStartDate);
+                                        }
+                                    );
+                            }
                         }
-                    }
-                );
-            
+                    );
+
                 $j(function () {
                     $j("#obs1").hide();
                     var myvalue1 = $j("#look1").text();
                     setValue('obs_value1.value', myvalue1.trim());
                 });
-                
+
                 if (url.searchParams.get("mode") == "EDIT") {//Edit
                     console.log("Mode Edit");
                 } else if (url.searchParams.get("formId")) {//Creation
@@ -300,7 +303,7 @@
     <!--===============================   Section 1 =======================================  -->
     <section headerLabel="1. Encounter Details">
         <div id="patient_id" style="display:none">
-            <lookup expression="patient.uuid" /> 
+            <lookup expression="patient.uuid" />
         </div>
         <table cellspacing="0" cellpadding="6" width="100%">
             <tr>
@@ -338,7 +341,13 @@
                 <td>Date de début des ARVs (Date of ART initiation):</td>
                 <td>
                     <div id="look1">
-                        <span class="value" id="regimentStartDate">   </span>
+                        <span class="value" id="regimentStartDate"> </span>
+                    </div>
+                    <div id="obs_username">
+                        <lookup expression="fn.getConcept('111238').name" />
+                    </div>
+                    <div id="obs_password">
+                        <lookup expression="fn.getConcept('111239').name" />
                     </div>
                 </td>
             </tr>
@@ -390,9 +399,8 @@
                     <obs conceptId="$@DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@" allowFutureDates="true" />
                     <div id="obs1">
                         <obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED_HIDE@" id="obs_value1" />
-                        <obs conceptId="$@USERNAME@" id="obs_username" />
-                        <obs conceptId="$@PASSWORD@" id="obs_password" />
                     </div>
+
                 </td>
             </tr>
         </table>
