@@ -124,6 +124,7 @@
         @RECENCY_VIRAL_LOAD_RESULT_DATE_HIDE@=db37bc08-2ac8-4120-ad82-44753961ad79
         @OI_NAME_HIDE@=33179d4d-fcc7-45c3-9411-7780e8a24bf5
         @OI_DIAGNOSIS_DATE_HIDE@=dc06e8ef-6b53-4a43-a7a3-d55a131c0011
+        @HIV_TEST_DATE@=3cde8c9e-26fe-102b-80cb-0017a47871b2
 
 
         paperFormId = (Fill this in)
@@ -840,7 +841,8 @@
                     <obs conceptId="$@HIV_TESTING_FACILITY_NAME@" id="Testing_facility_name" />
                 </td>
                 <td>Date of HIV positive results confirmation (Date de confirmation du status VIH) : &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('1837').obsDatetime" />
+                    <obs conceptId="$@HIV_TEST_DATE@" />
+                    <!-- <lookup class="value" expression="patient.getPatientIdentifier(4).dateCreated" /> -->
                 </td>
             </tr>
             <tr>
@@ -918,6 +920,7 @@
                                 <br />
                                 Date : &#160;&#160;&#160;&#160;
                                 <lookup class="value" expression="patient.getPatientIdentifier(4).dateCreated" />
+                                <!-- <lookup class="value" expression="fn.latestObs('1837').obsDatetime" /> -->
                             </div>
                             <div id="noTreatLink" class="other_reason_here">
                                 <br />
