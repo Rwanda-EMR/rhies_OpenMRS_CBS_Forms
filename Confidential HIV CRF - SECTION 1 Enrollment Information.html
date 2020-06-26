@@ -116,6 +116,15 @@
         @OI_DATE@=6781dba8-422d-455b-a26c-41a99c744444
         @STABLE_HIDE@=a650f583-8b61-4772-bae0-200dc81a463b
         @DATE_PHARMACY_PICK_UP_HIDE@=e0e8df2b-ea08-4945-a0ce-94d8715f814b
+        @WHO_STAGE_HIDE@=158439ae-74ca-45a1-a683-4b7a47508641
+        @WHO_STAGE_DATE_HIDE@=4648690e-ad24-4cbd-b5eb-66e03be327ad
+        @CD4_COUNT_RESULT_HIDE@=939e30cc-ecdb-42b0-b942-53ac0c9f6766
+        @RESULT_RETURN_DATE_HIDE@=8d2a0262-ce28-41bc-90cb-b2407d8f79ae
+        @VIRAL_LOAD_RESULT_HIDE@=f6e602d9-4d79-42bc-ab56-312c260ace63
+        @RECENCY_VIRAL_LOAD_RESULT_DATE_HIDE@=db37bc08-2ac8-4120-ad82-44753961ad79
+        @OI_NAME_HIDE@=33179d4d-fcc7-45c3-9411-7780e8a24bf5
+        @OI_DIAGNOSIS_DATE_HIDE@=dc06e8ef-6b53-4a43-a7a3-d55a131c0011
+
 
         paperFormId = (Fill this in)
         headerColor =#009d8e
@@ -203,11 +212,35 @@
 
                 $j(function () {
                     // $j("#obs1").hide();
-                     $j("#obs2").hide();
+                    $j("#obs2").hide();
+                    $j("#obs3").hide();
+                    $j("#obs4").hide();
+                    $j("#obs5").hide();
+                    $j("#obs6").hide();
+                    $j("#obs7").hide();
+                    $j("#obs8").hide();
+                    $j("#obs9").hide();
+                    $j("#obs10").hide();
                     // var myvalue1 = $j("#look1").text().trim();
                     var myvalue2 = $j("#look2").text().trim();
+                    var myvalue3 = $j("#look3").text().trim();
+                    var myvalue4 = $j("#look4").text().trim();
+                    var myvalue5 = $j("#look5").text().trim();
+                    var myvalue6 = $j("#look6").text().trim();
+                    var myvalue7 = $j("#look7").text().trim();
+                    var myvalue8 = $j("#look8").text().trim();
+                    var myvalue9 = $j("#look9").text().trim();
+                    var myvalue10 = $j("#look10").text().trim();
                     // setValue('obs_value1.value', myvalue1);
                     setValue('obs_value2.value', formatDate(myvalue2));
+                    setValue('obs_value3.value', formatDate(myvalue3));
+                    setValue('obs_value4.value', formatDate(myvalue4));
+                    setValue('obs_value5.value', formatDate(myvalue5));
+                    setValue('obs_value6.value', formatDate(myvalue6));
+                    setValue('obs_value7.value', formatDate(myvalue7));
+                    setValue('obs_value8.value', formatDate(myvalue8));
+                    setValue('obs_value9.value', formatDate(myvalue9));
+                    setValue('obs_value10.value', formatDate(myvalue10));
                 });
 
                 function formatDate(mydate) {
@@ -993,47 +1026,86 @@
             <tr>
                 <td>
                     <strong>WHO Stage :</strong> &#160;&#160;
-                    <lookup class="value" complexExpression="#if($fn.latestObs('1480').valueCoded ==1204) 1 #end
+                    <div id="look3">
+                        <lookup class="value" complexExpression="#if($fn.latestObs('1480').valueCoded ==1204) 1 #end
                             #if($fn.latestObs('1480').valueCoded ==1205) 2 #end
                             #if($fn.latestObs('1480').valueCoded ==1206) 3 #end
                             #if($fn.latestObs('1480').valueCoded ==1207) 4 #end
                             " />
+                    </div>
+                    <div id="obs3">
+                        <obs conceptId="$@WHO_STAGE_HIDE@" id="obs_value3" />
+                    </div>
                     <br /><br />
                     <strong>WHO Staging Date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                    <div id="look4">
+                        <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                    </div>
+                    <div id="obs4">
+                        <obs conceptId="$@WHO_STAGE_DATE_HIDE@" id="obs_value4" />
+                    </div>
                 </td>
                 <td>
                     <strong>CD4 count result :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('5497').valueNumeric" />
+                    <div id="look5">
+                        <lookup class="value" expression="fn.latestObs('5497').valueNumeric" />
+                    </div>
+                    <div id="obs5">
+                        <obs conceptId="$@CD4_COUNT_RESULT_HIDE@" id="obs_value5" />
+                    </div>
                     <br /><br />
                     <strong>Collection date :</strong> &#160;&#160;
                     <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" />
-
                     <br /><br />
                     <strong>Result return date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('5497').obsDatetime" />
+                    <div id="look6">
+                        <lookup class="value" expression="fn.latestObs('5497').obsDatetime" />
+                    </div>
+                    <div id="obs6">
+                        <obs conceptId="$@RESULT_RETURN_DATE_HIDE@" id="obs_value6" />
+                    </div>
                     <!-- <obs conceptId="$@DATE_OF_RETURNED_RESULT@" /> -->
                     <br />
                 </td>
                 <td>
                     <strong>Viral load result :</strong>&#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('856').valueNumeric" />
+                    <div id="look7">
+                        <lookup class="value" expression="fn.latestObs('856').valueNumeric" />
+                    </div>
+                    <div id="obs7">
+                        <obs conceptId="$@VIRAL_LOAD_RESULT_HIDE@" id="obs_value7" />
+                    </div>
                     <br /><br />
                     <strong>Collection date :</strong> &#160;&#160;
                     <obs conceptId="$@RECENCY_COLLECTION_DATE@" />
                     <br /><br />
                     <strong>Result return date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('856').obsDatetime" />
+                    <div id="look8">
+                        <lookup class="value" expression="fn.latestObs('856').obsDatetime" />
+                    </div>
+                    <div id="obs8">
+                        <obs conceptId="$@RECENCY_VIRAL_LOAD_RESULT_DATE_HIDE@" id="obs_value8" />
+                    </div>
                     <!-- <obs conceptId="$@RECENCY_VIRAL_LOAD_RESULT_DATE@" /> -->
                     <br /><br />
                 </td>
                 <td>
                     <strong>OI Name :</strong> &#160;&#160;
-                    <lookup class="value"
-                        complexExpression="#foreach($oi in $fn.allObs(1607)) $oi.valueCoded.name #end" />
+                    <div id="look9">
+                        <lookup class="value"
+                            complexExpression="#foreach($oi in $fn.allObs(1607)) $oi.valueCoded.name #end" />
+                    </div>
+                    <div id="obs9">
+                        <obs conceptId="$@OI_NAME_HIDE@" id="obs_value9" />
+                    </div>
                     <br /><br />
                     <strong>OI Diagnosis Date :</strong> &#160;&#160;
-                    <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                    <div id="look10">
+                        <lookup class="value" expression="fn.latestObs('1480').obsDatetime" />
+                    </div>
+                    <div id="obs10">
+                        <obs conceptId="$@OI_DIAGNOSIS_DATE_HIDE@" id="obs_value10" />
+                    </div>
                 </td>
 
             </tr>
