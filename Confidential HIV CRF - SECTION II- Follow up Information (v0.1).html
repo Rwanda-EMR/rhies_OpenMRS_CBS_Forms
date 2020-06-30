@@ -195,6 +195,7 @@
         @CURRENT_OPPORTUNISTIC_INFECTION_NON_CODED@=RWANDA:1731
         @STABLE_HIDE@=a650f583-8b61-4772-bae0-200dc81a463b
         @DATE_PHARMACY_PICK_UP_HIDE@=e0e8df2b-ea08-4945-a0ce-94d8715f814b
+        @ADHERENCE_HIDE@=00e37896-0d51-4cda-a0f2-df56cccab894
 
 
     </macros>
@@ -280,11 +281,11 @@
             $j(document).ready(function () {
 
                 $j(function () {
-                    // $j("#obs1").hide();
+                    $j("#obs1").hide();
                     $j("#obs2").hide();
-                    // var myvalue1 = $j("#look1").text().trim();
+                    var myvalue1 = $j("#look1").text().trim();
                     var myvalue2 = $j("#look2").text().trim();
-                    // setValue('obs_value1.value', myvalue1);
+                    setValue('obs_value1.value', myvalue1);
                     setValue('obs_value2.value', formatDate(myvalue2));
                 });
 
@@ -883,7 +884,8 @@
                     <strong> If VL > 200c/ml, Client Adherence: (Si charge virale>200c/ml, l’adhérence du client
                         est):</strong>
                     <br />
-                    <lookup class="value" complexExpression="#if(3 > $fn.latestObs('1738').valueNumeric) very Good #end
+                    <div id="look1">
+                        <lookup class="value" complexExpression="#if(3 > $fn.latestObs('1738').valueNumeric) Very Good #end
                         #if($fn.latestObs('1738').valueNumeric ==4) Good #end
                         #if($fn.latestObs('1738').valueNumeric ==5) Good #end
                         #if($fn.latestObs('1738').valueNumeric ==6) Good #end
@@ -891,6 +893,10 @@
                         #if($fn.latestObs('1738').valueNumeric ==8) Good #end
                         #if($fn.latestObs('1738').valueNumeric > 9) Poor #end
                         " />
+                    </div>
+                    <div id="obs1">
+                        <obs conceptId="$@ADHERENCE_HIDE@" id="obs_value1" />
+                    </div>
                     <br />
                     <br />
                     <obs conceptId="$@ENHANCED_COUNSELLING@"

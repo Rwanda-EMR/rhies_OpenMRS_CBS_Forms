@@ -841,7 +841,7 @@
                     <obs conceptId="$@HIV_TESTING_FACILITY_NAME@" id="Testing_facility_name" />
                 </td>
                 <td>Date of HIV positive results confirmation (Date de confirmation du status VIH) : &#160;&#160;
-                    <obs conceptId="$@HIV_TEST_DATE@" />
+                    <obs conceptId="$@DATE_HIV_POISITIVE_RESULT_CONFIRMED@" />
                     <!-- <lookup class="value" expression="patient.getPatientIdentifier(4).dateCreated" /> -->
                 </td>
             </tr>
@@ -918,8 +918,11 @@
                                 <lookup class="value"
                                     complexExpression="#foreach( $TRACnet in $patientIdentifiers.get('TRACnet ID')) $TRACnet #end " />
                                 <br />
-                                Date : &#160;&#160;&#160;&#160;
-                                <lookup class="value" expression="patient.getPatientIdentifier(4).dateCreated" />
+                                <!-- Date : &#160;&#160;&#160;&#160; -->
+                                <!-- <lookup expression="patient" /> -->
+                                <!-- <lookup expression="fn.currentProgramWorkflowStatus(2)" /> -->
+                                <!-- <enrollInProgram programId="2" showCheckbox="true" /> -->
+                                <!-- <lookup class="value" expression="patient.getPatientIdentifier(4).dateCreated" /> -->
                                 <!-- <lookup class="value" expression="fn.latestObs('1837').obsDatetime" /> -->
                             </div>
                             <div id="noTreatLink" class="other_reason_here">
